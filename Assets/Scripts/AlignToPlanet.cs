@@ -39,4 +39,29 @@ public class AlignToPlanet : MonoBehaviour
             AlignObject(obj);
         }
     }
+
+    // This method distributes objects equally over the entire surface of the planet
+    public void DistributeObjectsEqually()
+    {
+        int objectCount = objectsToAlign.Length;
+        float phi = Mathf.PI * (3 - Mathf.Sqrt(5)); // Golden angle in radians
+
+        for (int i = 0; i < objectCount; i++)
+        {
+            float y = 1 - (i / (float)(objectCount - 1)) * 2;  // y goes from 1 to -1
+            float radius = Mathf.Sqrt(1 - y * y);  // radius at y
+
+            float theta = phi * i;  // golden angle increment
+
+            float x = Mathf.Cos(theta) * radius;
+            float z = Mathf.Sin(theta) * radius;
+
+            Vector3 direction = new Vector3(x, y, z);
+            Vector3 newPosition = planetCenter.position + direction * distanceFromCenter;
+            objectsToAlign[i].transform.position = newPosition;
+
+            // Align the object to the surface of the planet
+            AlignObject(objectsToAlign[i]);
+        }
+    }
 }

@@ -21,5 +21,11 @@ public class AlignToPlanetEditor : Editor
         {
             script.DistributeObjectsRandomly();
         }
+
+        // Button to equally distribute objects on the planet's surface
+        if (GUILayout.Button("Equally Distribute Objects"))
+        {
+            script.DistributeObjectsEqually();
+        }
     }
 }
