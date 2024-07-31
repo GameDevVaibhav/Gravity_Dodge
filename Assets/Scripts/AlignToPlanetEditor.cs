@@ -9,9 +9,11 @@ public class AlignToPlanetEditor : Editor
         DrawDefaultInspector();
 
         AlignToPlanet script = (AlignToPlanet)target;
-        if (GUILayout.Button("Align Objects"))
+
+        // Button to align and position objects
+        if (GUILayout.Button("Align and Position Objects"))
         {
-            script.AlignObjectsToPlanet();
+            script.AlignAndPositionObjects();
         }
     }
 }
