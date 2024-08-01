@@ -8,7 +8,7 @@ public class ObjectEmergenceManager : MonoBehaviour
     public Transform planetCenter;             // Reference to the planet's center
     public int numberOfObjectsToEmerge = 6;    // Number of objects to randomly select for emergence
 
-    private Vector3[] initialPositions;        // Array to store initial positions
+    private Vector3[] initialLocalPositions;   // Array to store initial local positions
     private bool[] hasCompletedOscillation;    // Array to track if oscillation is complete for each object
     private GameObject[] selectedObjects;      // Array to store selected objects for emergence
     private float startTime;                   // Time when the current oscillation cycle started
@@ -32,12 +32,13 @@ public class ObjectEmergenceManager : MonoBehaviour
     // Initialize the positions and oscillation status for all objects
     private void InitializePositionsAndStatus()
     {
-        initialPositions = new Vector3[objectsToOscillate.Length];
+        initialLocalPositions = new Vector3[objectsToOscillate.Length];
         hasCompletedOscillation = new bool[objectsToOscillate.Length];
 
         for (int i = 0; i < objectsToOscillate.Length; i++)
         {
-            initialPositions[i] = objectsToOscillate[i].transform.position;
+            // Store the initial positions in local space relative to the planet
+            initialLocalPositions[i] = objectsToOscillate[i].transform.localPosition;
             hasCompletedOscillation[i] = true; // Initially, mark all as completed to avoid them moving until selected
         }
     }
@@ -67,18 +68,19 @@ public class ObjectEmergenceManager : MonoBehaviour
     // Perform the oscillation logic for a given object
     private void PerformOscillation(GameObject selectedObject, int objIndex)
     {
-        Vector3 direction = (selectedObject.transform.position - planetCenter.position).normalized;
+        // Calculate oscillation relative to the planet's local position
+        Vector3 direction = (initialLocalPositions[objIndex] - planetCenter.localPosition).normalized;
         float elapsed = Time.time - startTime;
         float offset = Mathf.Abs(Mathf.Sin(elapsed * oscillationFrequency) * emergenceDistance);
-        Vector3 newPosition = initialPositions[objIndex] + direction * offset;
+        Vector3 newPosition = initialLocalPositions[objIndex] + direction * offset;
 
         if (!float.IsNaN(newPosition.x) && !float.IsNaN(newPosition.y) && !float.IsNaN(newPosition.z))
         {
-            selectedObject.transform.position = newPosition;
+            selectedObject.transform.localPosition = newPosition;
         }
 
         // Check if the object has completed one oscillation cycle
-        if (elapsed * oscillationFrequency > Mathf.PI)
+        if (elapsed * oscillationFrequency > Mathf.PI * 2)
         {
             hasCompletedOscillation[objIndex] = true;
         }
