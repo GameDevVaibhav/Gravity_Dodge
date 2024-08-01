@@ -22,7 +22,7 @@ public class ObjectEmergence : MonoBehaviour
         Vector3 direction = (transform.position - planetCenter.position).normalized;
 
         // Oscillate the object along its local Y-axis
-        float offset = Mathf.Sin(Time.time * oscillationFrequency) * emergenceDistance;
+        float offset = Mathf.Abs(Mathf.Sin(Time.time * oscillationFrequency) * emergenceDistance);
 
         // Calculate the new position
         Vector3 newPosition = initialPosition + direction * offset;
