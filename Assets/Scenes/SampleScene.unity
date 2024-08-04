@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 141198788}
   - component: {fileID: 141198787}
   - component: {fileID: 141198786}
+  - component: {fileID: 141198791}
   m_Layer: 0
   m_Name: Cylinder (15)
   m_TagString: Untagged
@@ -247,6 +248,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1006160723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.806}
+--- !u!114 &141198791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141198785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +420,7 @@ GameObject:
   - component: {fileID: 363429239}
   - component: {fileID: 363429238}
   - component: {fileID: 363429242}
+  - component: {fileID: 363429243}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -429,7 +443,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -527,6 +541,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &363429243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363429236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ecd7d29d62bc54390dbedf2c939952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &395516039
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +566,7 @@ GameObject:
   - component: {fileID: 395516043}
   - component: {fileID: 395516042}
   - component: {fileID: 395516041}
+  - component: {fileID: 395516045}
   m_Layer: 0
   m_Name: Cylinder (14)
   m_TagString: Untagged
@@ -651,6 +678,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395516039}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &395516045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395516039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +821,7 @@ GameObject:
   - component: {fileID: 414059669}
   - component: {fileID: 414059668}
   - component: {fileID: 414059672}
+  - component: {fileID: 414059673}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -893,6 +933,18 @@ MonoBehaviour:
   emergenceDistance: 1.5
   oscillationFrequency: 1
   planetCenter: {fileID: 671699165}
+--- !u!114 &414059673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414059666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &502981864
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +958,7 @@ GameObject:
   - component: {fileID: 502981868}
   - component: {fileID: 502981867}
   - component: {fileID: 502981866}
+  - component: {fileID: 502981870}
   m_Layer: 0
   m_Name: Cylinder (6)
   m_TagString: Untagged
@@ -1017,6 +1070,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502981864}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &502981870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502981864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &639004053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1095,7 @@ GameObject:
   - component: {fileID: 639004056}
   - component: {fileID: 639004055}
   - component: {fileID: 639004054}
+  - component: {fileID: 639004059}
   m_Layer: 0
   m_Name: Cylinder (5)
   m_TagString: Untagged
@@ -1141,6 +1207,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1006160723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.806}
+--- !u!114 &639004059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639004053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671699164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1402,7 @@ GameObject:
   - component: {fileID: 905947059}
   - component: {fileID: 905947058}
   - component: {fileID: 905947057}
+  - component: {fileID: 905947061}
   m_Layer: 0
   m_Name: Cylinder (10)
   m_TagString: Untagged
@@ -1435,6 +1514,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905947055}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &905947061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905947055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &975685452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1539,7 @@ GameObject:
   - component: {fileID: 975685456}
   - component: {fileID: 975685455}
   - component: {fileID: 975685454}
+  - component: {fileID: 975685458}
   m_Layer: 0
   m_Name: Cylinder (11)
   m_TagString: Untagged
@@ -1559,6 +1651,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975685452}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &975685458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975685452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1006160722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,9 +1741,10 @@ MonoBehaviour:
   - {fileID: 1704877108}
   - {fileID: 1975452790}
   emergenceDistance: 2
-  oscillationFrequency: 1
+  moveSpeed: 10
+  pauseDuration: 0
   planetCenter: {fileID: 671699165}
-  numberOfObjectsToEmerge: 3
+  numberOfObjectsToEmerge: 8
 --- !u!1 &1262363690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1821,7 @@ GameObject:
   - component: {fileID: 1340000762}
   - component: {fileID: 1340000761}
   - component: {fileID: 1340000760}
+  - component: {fileID: 1340000764}
   m_Layer: 0
   m_Name: Cylinder (9)
   m_TagString: Untagged
@@ -1827,6 +1933,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340000758}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1340000764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340000758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1365857248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1958,7 @@ GameObject:
   - component: {fileID: 1365857252}
   - component: {fileID: 1365857251}
   - component: {fileID: 1365857250}
+  - component: {fileID: 1365857254}
   m_Layer: 0
   m_Name: Cylinder (8)
   m_TagString: Untagged
@@ -1951,6 +2070,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365857248}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1365857254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365857248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441854246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2095,7 @@ GameObject:
   - component: {fileID: 1441854250}
   - component: {fileID: 1441854249}
   - component: {fileID: 1441854248}
+  - component: {fileID: 1441854252}
   m_Layer: 0
   m_Name: Cylinder (7)
   m_TagString: Untagged
@@ -2075,6 +2207,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441854246}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1441854252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441854246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1704877108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,6 +2232,7 @@ GameObject:
   - component: {fileID: 1704877111}
   - component: {fileID: 1704877110}
   - component: {fileID: 1704877113}
+  - component: {fileID: 1704877114}
   m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
@@ -2199,6 +2344,18 @@ MonoBehaviour:
   emergenceDistance: 1.5
   oscillationFrequency: 1
   planetCenter: {fileID: 671699165}
+--- !u!114 &1704877114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704877108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715409607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,6 +2369,7 @@ GameObject:
   - component: {fileID: 1715409611}
   - component: {fileID: 1715409610}
   - component: {fileID: 1715409609}
+  - component: {fileID: 1715409613}
   m_Layer: 0
   m_Name: Cylinder (12)
   m_TagString: Untagged
@@ -2323,6 +2481,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715409607}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1715409613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715409607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1804443905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,6 +2506,7 @@ GameObject:
   - component: {fileID: 1804443908}
   - component: {fileID: 1804443907}
   - component: {fileID: 1804443910}
+  - component: {fileID: 1804443911}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -2447,6 +2618,18 @@ MonoBehaviour:
   emergenceDistance: 1.5
   oscillationFrequency: 1
   planetCenter: {fileID: 671699165}
+--- !u!114 &1804443911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804443905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1837487454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,6 +2643,7 @@ GameObject:
   - component: {fileID: 1837487457}
   - component: {fileID: 1837487456}
   - component: {fileID: 1837487455}
+  - component: {fileID: 1837487460}
   m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
@@ -2571,6 +2755,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1006160723}
   m_LocalEulerAnglesHint: {x: -33.14, y: -40.049, z: 0}
+--- !u!114 &1837487460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837487454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1912675157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,6 +2780,7 @@ GameObject:
   - component: {fileID: 1912675161}
   - component: {fileID: 1912675160}
   - component: {fileID: 1912675159}
+  - component: {fileID: 1912675163}
   m_Layer: 0
   m_Name: Cylinder (13)
   m_TagString: Untagged
@@ -2695,6 +2892,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912675157}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1912675163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912675157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975452790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2917,7 @@ GameObject:
   - component: {fileID: 1975452793}
   - component: {fileID: 1975452792}
   - component: {fileID: 1975452796}
+  - component: {fileID: 1975452797}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -2819,6 +3029,18 @@ MonoBehaviour:
   emergenceDistance: 1.5
   oscillationFrequency: 1
   planetCenter: {fileID: 671699165}
+--- !u!114 &1975452797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975452790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

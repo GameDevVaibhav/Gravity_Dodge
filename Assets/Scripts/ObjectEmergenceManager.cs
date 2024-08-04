@@ -3,86 +3,114 @@ using UnityEngine;
 public class ObjectEmergenceManager : MonoBehaviour
 {
     public GameObject[] objectsToOscillate;   // Array of objects to be oscillated
-    public float emergenceDistance = 1f;
-    public float oscillationFrequency = 1f;
-    public Transform planetCenter;             // Reference to the planet's center
-    public int numberOfObjectsToEmerge = 6;    // Number of objects to randomly select for emergence
+    public float emergenceDistance = 1f;      // Distance to emerge from the surface
+    public float moveSpeed = 2f;              // Speed of movement for emerging and retracting
+    public float pauseDuration = 2f;          // Duration to pause at the target position
+    public Transform planetCenter;            // Reference to the planet's center
+    public int numberOfObjectsToEmerge = 6;   // Number of objects to randomly select for emergence
 
-    private Vector3[] initialLocalPositions;   // Array to store initial local positions
-    private bool[] hasCompletedOscillation;    // Array to track if oscillation is complete for each object
-    private GameObject[] selectedObjects;      // Array to store selected objects for emergence
-    private float startTime;                   // Time when the current oscillation cycle started
+    private Vector3[] initialLocalPositions;  // Array to store initial local positions
+    private Vector3[] targetPositions;        // Array to store target (emerged) positions
+    private bool[] movingOutward;             // Track if the object is moving outward
+    private bool[] isPausing;                 // Track if the object is currently pausing
+    private float[] pauseStartTime;           // Track the start time of the pause for each object
+    private GameObject[] selectedObjects;     // Array to store selected objects for emergence
 
     void Start()
     {
         InitializePositionsAndStatus();
-        SelectAndStartOscillation();
+        SelectAndStartMovement();
     }
 
     void Update()
     {
-        UpdateOscillations();
+        UpdateMovements();
 
-        if (CheckOscillationCompletion())
+        if (CheckAllObjectsAtInitialPositions())
         {
-            SelectAndStartOscillation();
+            SelectAndStartMovement();
         }
     }
 
-    // Initialize the positions and oscillation status for all objects
+    // Initialize the positions and movement status for all objects
     private void InitializePositionsAndStatus()
     {
-        initialLocalPositions = new Vector3[objectsToOscillate.Length];
-        hasCompletedOscillation = new bool[objectsToOscillate.Length];
+        int length = objectsToOscillate.Length;
+        initialLocalPositions = new Vector3[length];
+        targetPositions = new Vector3[length];
+        movingOutward = new bool[length];
+        isPausing = new bool[length];
+        pauseStartTime = new float[length];
 
-        for (int i = 0; i < objectsToOscillate.Length; i++)
+        for (int i = 0; i < length; i++)
         {
             // Store the initial positions in local space relative to the planet
             initialLocalPositions[i] = objectsToOscillate[i].transform.localPosition;
-            hasCompletedOscillation[i] = true; // Initially, mark all as completed to avoid them moving until selected
+
+            // Calculate the target position (emerged position)
+            Vector3 direction = (initialLocalPositions[i] - planetCenter.localPosition).normalized;
+            targetPositions[i] = initialLocalPositions[i] + direction * emergenceDistance;
+
+            // Initially, all objects are not moving outward and not pausing
+            movingOutward[i] = true;
+            isPausing[i] = false;
         }
     }
 
-    // Select objects and start oscillation for them
-    private void SelectAndStartOscillation()
+    // Select objects and start movement for them
+    private void SelectAndStartMovement()
     {
         selectedObjects = SelectRandomObjects(objectsToOscillate, numberOfObjectsToEmerge);
-        ResetOscillationStatus();
-        startTime = Time.time; // Reset start time for new cycle
+        ResetMovementStatus();
     }
 
-    // Update oscillations for the selected objects
-    private void UpdateOscillations()
+    // Update movements for the selected objects
+    private void UpdateMovements()
     {
         foreach (GameObject selectedObject in selectedObjects)
         {
             int objIndex = System.Array.IndexOf(objectsToOscillate, selectedObject);
 
-            if (hasCompletedOscillation[objIndex])
-                continue;
+            if (isPausing[objIndex])
+            {
+                // Check if the pause duration has elapsed
+                if (Time.time - pauseStartTime[objIndex] >= pauseDuration)
+                {
+                    isPausing[objIndex] = false;  // Resume movement back to the initial position
+                    movingOutward[objIndex] = false;
+                }
+                else
+                {
+                    // Skip movement during the pause
+                    continue;
+                }
+            }
 
-            PerformOscillation(selectedObject, objIndex);
-        }
-    }
+            if (movingOutward[objIndex])
+            {
+                // Move the object outward (from initial position to target position)
+                selectedObject.transform.localPosition = Vector3.MoveTowards(
+                    selectedObject.transform.localPosition,
+                    targetPositions[objIndex],
+                    moveSpeed * Time.deltaTime
+                );
 
-    // Perform the oscillation logic for a given object
-    private void PerformOscillation(GameObject selectedObject, int objIndex)
-    {
-        // Calculate oscillation relative to the planet's local position
-        Vector3 direction = (initialLocalPositions[objIndex] - planetCenter.localPosition).normalized;
-        float elapsed = Time.time - startTime;
-        float offset = Mathf.Abs(Mathf.Sin(elapsed * oscillationFrequency) * emergenceDistance);
-        Vector3 newPosition = initialLocalPositions[objIndex] + direction * offset;
-
-        if (!float.IsNaN(newPosition.x) && !float.IsNaN(newPosition.y) && !float.IsNaN(newPosition.z))
-        {
-            selectedObject.transform.localPosition = newPosition;
-        }
-
-        // Check if the object has completed one oscillation cycle
-        if (elapsed * oscillationFrequency > Mathf.PI * 2)
-        {
-            hasCompletedOscillation[objIndex] = true;
+                // Check if the object has reached the target position
+                if (Vector3.Distance(selectedObject.transform.localPosition, targetPositions[objIndex]) < 0.01f)
+                {
+                    isPausing[objIndex] = true;  // Start pausing
+                    pauseStartTime[objIndex] = Time.time;  // Record pause start time
+                }
+            }
+            else
+            {
+                // Move the object back to its initial position
+                selectedObject.transform.localPosition = Vector3.MoveTowards(
+                    selectedObject.transform.localPosition,
+                    initialLocalPositions[objIndex],
+                    moveSpeed * Time.deltaTime
+                );
+            }
         }
     }
 
@@ -108,28 +136,23 @@ public class ObjectEmergenceManager : MonoBehaviour
         return selectedObjects;
     }
 
-    // Reset oscillation status for selected objects
-    private void ResetOscillationStatus()
+    // Reset movement status for selected objects
+    private void ResetMovementStatus()
     {
-        for (int i = 0; i < hasCompletedOscillation.Length; i++)
+        for (int i = 0; i < movingOutward.Length; i++)
         {
-            hasCompletedOscillation[i] = true; // Reset all to completed
-        }
-
-        foreach (GameObject selectedObject in selectedObjects)
-        {
-            int objIndex = System.Array.IndexOf(objectsToOscillate, selectedObject);
-            hasCompletedOscillation[objIndex] = false; // Only mark selected objects as not completed
+            movingOutward[i] = true;  // Set all objects to move outward initially
+            isPausing[i] = false;    // Ensure no object is pausing initially
         }
     }
 
-    // Check if all selected objects have completed their oscillation
-    private bool CheckOscillationCompletion()
+    // Check if all selected objects have returned to their initial positions
+    private bool CheckAllObjectsAtInitialPositions()
     {
         foreach (GameObject selectedObject in selectedObjects)
         {
             int objIndex = System.Array.IndexOf(objectsToOscillate, selectedObject);
-            if (!hasCompletedOscillation[objIndex])
+            if (Vector3.Distance(selectedObject.transform.localPosition, initialLocalPositions[objIndex]) >= 0.01f)
             {
                 return false;
             }

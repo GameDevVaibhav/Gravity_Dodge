@@ -10,6 +10,11 @@ public class PlanetRotation : MonoBehaviour
     private Vector2 touchCurrentPos;
     private bool isTouching = false;
 
+    private void Start()
+    {
+        // Set an initial rotation direction so the planet starts rotating immediately
+       // currentRotationDirection = new Vector3(1, 0, 0).normalized;
+    }
     void Update()
     {
         HandleTouchInput();
