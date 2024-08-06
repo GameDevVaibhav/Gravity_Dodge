@@ -13,8 +13,9 @@ public class PlanetRotation : MonoBehaviour
     private void Start()
     {
         // Set an initial rotation direction so the planet starts rotating immediately
-       // currentRotationDirection = new Vector3(1, 0, 0).normalized;
+        currentRotationDirection = new Vector3(1, 0, 0).normalized;
     }
+
     void Update()
     {
         HandleTouchInput();
@@ -46,12 +47,18 @@ public class PlanetRotation : MonoBehaviour
                 {
                     touchCurrentPos = touch.position;
                     Vector2 delta = touchCurrentPos - touchStartPos;
-                    currentRotationDirection = new Vector3(delta.y,- delta.x, 0 ).normalized;
+
+                    if (delta != Vector2.zero)
+                    {
+                        // Only update the rotation direction if there's a non-zero delta
+                        currentRotationDirection = new Vector3(delta.y, -delta.x, 0).normalized;
+                    }
                 }
             }
             else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
                 isTouching = false;
+                // Don't reset the rotation direction here, just the touch positions
                 touchStartPos = touchCurrentPos;
             }
         }
