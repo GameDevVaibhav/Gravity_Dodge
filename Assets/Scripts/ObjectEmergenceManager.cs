@@ -14,7 +14,8 @@ public class ObjectEmergenceManager : MonoBehaviour
     private bool[] movingOutward;             // Track if the object is moving outward
     private bool[] isPausing;                 // Track if the object is currently pausing
     private float[] pauseStartTime;           // Track the start time of the pause for each object
-    private GameObject[] selectedObjects;     // Array to store selected objects for emergence
+    private GameObject[] set1Objects;         // Array to store the first set of objects for emergence
+    private GameObject[] set2Objects;         // Array to store the second set of objects for standby
 
     void Start()
     {
@@ -24,11 +25,24 @@ public class ObjectEmergenceManager : MonoBehaviour
 
     void Update()
     {
-        UpdateMovements();
+        UpdateMovements(set1Objects);
 
-        if (CheckAllObjectsAtInitialPositions())
+        if (CheckAllObjectsAtInitialPositions(set1Objects))
         {
-            SelectAndStartMovement();
+            // Deactivate child objects for Set1 as they stop oscillating
+            DeactivateChildObjects(set1Objects);
+
+            // Set2 can now start oscillating, and a new standby set can be selected
+            set1Objects = set2Objects;
+
+            // Activate child objects for Set2 as it moves to oscillating
+            DeactivateChildObjects(set2Objects);
+
+            // Select a new standby set and activate their child objects
+            set2Objects = SelectRandomObjects(objectsToOscillate, numberOfObjectsToEmerge);
+            ActivateChildObjects(set2Objects);
+
+            ResetMovementStatus(set1Objects);
         }
     }
 
@@ -60,12 +74,18 @@ public class ObjectEmergenceManager : MonoBehaviour
     // Select objects and start movement for them
     private void SelectAndStartMovement()
     {
-        selectedObjects = SelectRandomObjects(objectsToOscillate, numberOfObjectsToEmerge);
-        ResetMovementStatus();
+        set1Objects = SelectRandomObjects(objectsToOscillate, numberOfObjectsToEmerge);
+        set2Objects = SelectRandomObjects(objectsToOscillate, numberOfObjectsToEmerge);
+
+        // Activate child objects for the standby set (set2)
+        ActivateChildObjects(set2Objects);
+
+        ResetMovementStatus(set1Objects);
+        DebugStandbySet(); // Debug the standby set at the start
     }
 
     // Update movements for the selected objects
-    private void UpdateMovements()
+    private void UpdateMovements(GameObject[] selectedObjects)
     {
         foreach (GameObject selectedObject in selectedObjects)
         {
@@ -137,17 +157,18 @@ public class ObjectEmergenceManager : MonoBehaviour
     }
 
     // Reset movement status for selected objects
-    private void ResetMovementStatus()
+    private void ResetMovementStatus(GameObject[] selectedObjects)
     {
-        for (int i = 0; i < movingOutward.Length; i++)
+        foreach (GameObject selectedObject in selectedObjects)
         {
-            movingOutward[i] = true;  // Set all objects to move outward initially
-            isPausing[i] = false;    // Ensure no object is pausing initially
+            int objIndex = System.Array.IndexOf(objectsToOscillate, selectedObject);
+            movingOutward[objIndex] = true;  // Set all objects to move outward initially
+            isPausing[objIndex] = false;    // Ensure no object is pausing initially
         }
     }
 
     // Check if all selected objects have returned to their initial positions
-    private bool CheckAllObjectsAtInitialPositions()
+    private bool CheckAllObjectsAtInitialPositions(GameObject[] selectedObjects)
     {
         foreach (GameObject selectedObject in selectedObjects)
         {
@@ -158,5 +179,33 @@ public class ObjectEmergenceManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    // Debug the standby set
+    private void DebugStandbySet()
+    {
+        Debug.Log("Standby Set Selected:");
+        foreach (GameObject obj in set2Objects)
+        {
+            Debug.Log(obj.name);
+        }
+    }
+
+    // Activate child objects for the standby set
+    private void ActivateChildObjects(GameObject[] selectedObjects)
+    {
+        foreach (GameObject selectedObject in selectedObjects)
+        {
+            selectedObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
+
+    // Deactivate child objects for the set that starts oscillating
+    private void DeactivateChildObjects(GameObject[] selectedObjects)
+    {
+        foreach (GameObject selectedObject in selectedObjects)
+        {
+            selectedObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
