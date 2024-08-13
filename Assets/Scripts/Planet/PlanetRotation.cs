@@ -73,5 +73,6 @@ public class PlanetRotation : MonoBehaviour
         float planetRadius = transform.localScale.x / 2;
         float objectRadius = objectOnPlanet.localScale.y / 2; // Assuming the object is a cube, change as needed
         objectOnPlanet.position = transform.position + direction * (planetRadius + objectRadius);
+        
     }
 }
