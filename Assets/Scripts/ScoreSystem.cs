@@ -1,26 +1,43 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScoreSystem : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;           // Reference to the UI text displaying the score
-    public float scoreSpeed = 1f;    // Speed at which the score increases (units per second)
+    public TextMeshProUGUI scoreText;  // Reference to the UI text displaying the score
+    public float scoreSpeed = 1f;      // Speed at which the score increases (units per second)
 
-    private float currentScore = 0f; // Current score
-    private float scoreInterval;     // Interval at which the score increases
+    private float currentScore = 0f;   // Current score
+    private float scoreInterval;       // Interval at which the score increases
+    private bool isGamePlaying = false;
 
     void Start()
     {
         // Calculate the interval based on the speed
         scoreInterval = 1f / scoreSpeed;
         UpdateScoreText();
-        InvokeRepeating("IncreaseScore", scoreInterval, scoreInterval);
+    }
+
+    void Update()
+    {
+        if (isGamePlaying)
+        {
+            IncreaseScore();
+        }
+    }
+
+    public void StartScore()
+    {
+        isGamePlaying = true;
+    }
+
+    public void StopScore()
+    {
+        isGamePlaying = false;
     }
 
     void IncreaseScore()
     {
-        currentScore += 1f;
+        currentScore += Time.deltaTime * scoreSpeed;
         UpdateScoreText();
     }
 

@@ -13,11 +13,15 @@ public class PlanetRotation : MonoBehaviour
     private void Start()
     {
         // Set an initial rotation direction so the planet starts rotating immediately
-       // currentRotationDirection = new Vector3(1, 0, 0).normalized;
+        currentRotationDirection = new Vector3(1, 0, 0).normalized;
     }
 
     void Update()
     {
+        if (GameManager.Instance.currentState != GameState.Play)
+            return;
+
+
         HandleTouchInput();
 
         // Apply continuous rotation based on the current rotation direction
@@ -66,13 +70,13 @@ public class PlanetRotation : MonoBehaviour
 
     void PositionObjectOnSurface()
     {
-        // Calculate the direction from the planet center to the object
-        Vector3 direction = (objectOnPlanet.position - transform.position).normalized;
+        //// Calculate the direction from the planet center to the object
+        //Vector3 direction = (objectOnPlanet.position - transform.position).normalized;
 
-        // Calculate the correct position on the surface of the planet
-        float planetRadius = transform.localScale.x / 2;
-        float objectRadius = objectOnPlanet.localScale.y / 2; // Assuming the object is a cube, change as needed
-        objectOnPlanet.position = transform.position + direction * (planetRadius + objectRadius);
+        //// Calculate the correct position on the surface of the planet
+        //float planetRadius = transform.localScale.x / 2;
+        //float objectRadius = objectOnPlanet.localScale.y / 2; // Assuming the object is a cube, change as needed
+        //objectOnPlanet.position = transform.position + direction * (planetRadius + objectRadius);
         
     }
 }
