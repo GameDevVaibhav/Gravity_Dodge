@@ -10,7 +10,7 @@ public class CollectibleSpawner : MonoBehaviour
 
     private int currentCollectibleCount = 0;
 
-    void Start()
+   public void InitialSpawn()
     {
         // Spawn the initial set of collectibles
         for (int i = 0; i < initialCollectibleCount; i++)
@@ -22,6 +22,7 @@ public class CollectibleSpawner : MonoBehaviour
     // Method to spawn a collectible at a random location on the planet's surface
     public void SpawnCollectible()
     {
+        
         if (currentCollectibleCount >= maxCollectibles)
             return;
 

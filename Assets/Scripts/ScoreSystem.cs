@@ -9,6 +9,7 @@ public class ScoreSystem : MonoBehaviour
     private float currentScore = 0f;   // Current score
     private float scoreInterval;       // Interval at which the score increases
     private bool isGamePlaying = false;
+    private bool collectiblesSpawned = false;  // To track if collectibles have already spawned
 
     void Start()
     {
@@ -22,6 +23,13 @@ public class ScoreSystem : MonoBehaviour
         if (isGamePlaying)
         {
             IncreaseScore();
+
+            // Check if the score has exceeded 50 and spawn collectibles if not already spawned
+            if (currentScore > 50f && !collectiblesSpawned)
+            {
+                SpawnInitialCollectibles();
+                collectiblesSpawned = true;
+            }
         }
     }
 
@@ -44,5 +52,19 @@ public class ScoreSystem : MonoBehaviour
     void UpdateScoreText()
     {
         scoreText.text = "Score: " + Mathf.FloorToInt(currentScore).ToString();
+    }
+
+    void SpawnInitialCollectibles()
+    {
+        // Find the CollectibleSpawner in the scene
+        CollectibleSpawner spawner = FindObjectOfType<CollectibleSpawner>();
+        if (spawner != null)
+        {
+            spawner.InitialSpawn();
+        }
+        else
+        {
+            Debug.LogError("No CollectibleSpawner found in the scene.");
+        }
     }
 }

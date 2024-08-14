@@ -25,6 +25,9 @@ public class ObjectEmergenceManager : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.currentState != GameState.Play)
+            return; // Exit if not in Play state
+
         UpdateMovements(set1Objects);
 
         if (CheckAllObjectsAtInitialPositions(set1Objects))
@@ -194,6 +197,8 @@ public class ObjectEmergenceManager : MonoBehaviour
     // Activate child objects for the standby set
     private void ActivateChildObjects(GameObject[] selectedObjects)
     {
+        if (GameManager.Instance.currentState != GameState.Play)
+            return; // Exit if not in Play state
         foreach (GameObject selectedObject in selectedObjects)
         {
             selectedObject.transform.GetChild(0).gameObject.SetActive(true);

@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(false);
         planetSwitchButton.SetActive(false);
         // Enable other game mechanics
+        
         scoreSystem.StartScore();
     }
 
