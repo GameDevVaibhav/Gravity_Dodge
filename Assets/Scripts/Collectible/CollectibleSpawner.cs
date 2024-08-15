@@ -9,8 +9,16 @@ public class CollectibleSpawner : MonoBehaviour
     public int maxCollectibles = 3;       // Maximum number of collectibles to have at any time
 
     private int currentCollectibleCount = 0;
+    void OnEnable()
+    {
+        GameManager.OnGameRestart += ClearAllCollectibles;
+    }
 
-   public void InitialSpawn()
+    void OnDisable()
+    {
+        GameManager.OnGameRestart -= ClearAllCollectibles;
+    }
+    public void InitialSpawn()
     {
         // Spawn the initial set of collectibles
         for (int i = 0; i < initialCollectibleCount; i++)
@@ -44,5 +52,15 @@ public class CollectibleSpawner : MonoBehaviour
 
         // Spawn a new collectible to maintain the count
         SpawnCollectible();
+    }
+
+    public void ClearAllCollectibles()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        currentCollectibleCount = 0;  // Reset the collectible count
+       // InitialSpawn();
     }
 }
