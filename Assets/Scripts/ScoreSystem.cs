@@ -51,7 +51,12 @@ public class ScoreSystem : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + Mathf.FloorToInt(currentScore).ToString();
+        scoreText.text = Mathf.FloorToInt(currentScore).ToString();
+    }
+
+    public void ResetScore()
+    {
+        currentScore = 0f;
     }
 
     void SpawnInitialCollectibles()

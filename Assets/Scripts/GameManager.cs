@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum GameState
@@ -11,10 +12,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public static event Action OnGameRestart;
+
     public GameState currentState = GameState.Menu;
     public GameObject playButton;
     public GameObject planetSwitchButton;
     ScoreSystem scoreSystem;
+    public GameObject gameOverUI;
 
     private void Awake()
     {
@@ -74,16 +78,39 @@ public class GameManager : MonoBehaviour
     void EnterGameOverState()
     {
         // Handle game over logic
-        scoreSystem.StartScore();
+        scoreSystem.StopScore();
+        ShowGameOverUI();
+        
     }
 
     public void OnPlayButtonClicked()
     {
         UpdateGameState(GameState.Play);
+
     }
 
     public void OnPlanetSwitchButtonClicked()
     {
         // Logic to switch the planet
+    }
+
+    private void ShowGameOverUI()
+    {
+        // Enable the GameOver UI
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(true);
+        }
+
+    }
+    public void RestartGame()
+    {
+        scoreSystem.ResetScore();
+
+        OnGameRestart?.Invoke();
+
+        gameOverUI.SetActive(false);
+
+        UpdateGameState(GameState.Play);
     }
 }

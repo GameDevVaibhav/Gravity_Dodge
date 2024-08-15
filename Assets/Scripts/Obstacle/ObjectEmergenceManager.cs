@@ -9,7 +9,9 @@ public class ObjectEmergenceManager : MonoBehaviour
     public Transform planetCenter;            // Reference to the planet's center
     public int numberOfObjectsToEmerge = 6;   // Number of objects to randomly select for emergence
 
-    private Vector3[] initialLocalPositions;  // Array to store initial local positions
+    private Vector3[] originalInitialPositions; // Array to store the original initial positions
+    private bool[] originalInitialStatuses;    // Array to store the original initial active statuses
+    private Vector3[] currentInitialPositions;  // Array to store current initial local positions
     private Vector3[] targetPositions;        // Array to store target (emerged) positions
     private bool[] movingOutward;             // Track if the object is moving outward
     private bool[] isPausing;                 // Track if the object is currently pausing
@@ -17,8 +19,19 @@ public class ObjectEmergenceManager : MonoBehaviour
     private GameObject[] set1Objects;         // Array to store the first set of objects for emergence
     private GameObject[] set2Objects;         // Array to store the second set of objects for standby
 
+    void OnEnable()
+    {
+        GameManager.OnGameRestart += ResetEmergenceManager;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnGameRestart -= ResetEmergenceManager;
+    }
+
     void Start()
     {
+        InitializeOriginalInitialState();
         InitializePositionsAndStatus();
         SelectAndStartMovement();
     }
@@ -49,11 +62,37 @@ public class ObjectEmergenceManager : MonoBehaviour
         }
     }
 
+    // Initialize the original initial positions and statuses for all objects
+    private void InitializeOriginalInitialState()
+    {
+        int length = objectsToOscillate.Length;
+        originalInitialPositions = new Vector3[length];
+        originalInitialStatuses = new bool[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            // Store the initial positions and active statuses
+            originalInitialPositions[i] = objectsToOscillate[i].transform.localPosition;
+            originalInitialStatuses[i] = objectsToOscillate[i].activeSelf;
+        }
+    }
+
+    // Reset the objects to their original initial positions and statuses
+    private void ResetToOriginalInitialState()
+    {
+        int length = objectsToOscillate.Length;
+        for (int i = 0; i < length; i++)
+        {
+            objectsToOscillate[i].transform.localPosition = originalInitialPositions[i];
+            objectsToOscillate[i].SetActive(originalInitialStatuses[i]);
+        }
+    }
+
     // Initialize the positions and movement status for all objects
     private void InitializePositionsAndStatus()
     {
         int length = objectsToOscillate.Length;
-        initialLocalPositions = new Vector3[length];
+        currentInitialPositions = new Vector3[length];
         targetPositions = new Vector3[length];
         movingOutward = new bool[length];
         isPausing = new bool[length];
@@ -61,12 +100,12 @@ public class ObjectEmergenceManager : MonoBehaviour
 
         for (int i = 0; i < length; i++)
         {
-            // Store the initial positions in local space relative to the planet
-            initialLocalPositions[i] = objectsToOscillate[i].transform.localPosition;
+            // Reset to the original initial positions
+            currentInitialPositions[i] = originalInitialPositions[i];
 
             // Calculate the target position (emerged position)
-            Vector3 direction = (initialLocalPositions[i] - planetCenter.localPosition).normalized;
-            targetPositions[i] = initialLocalPositions[i] + direction * emergenceDistance;
+            Vector3 direction = (currentInitialPositions[i] - planetCenter.localPosition).normalized;
+            targetPositions[i] = currentInitialPositions[i] + direction * emergenceDistance;
 
             // Initially, all objects are not moving outward and not pausing
             movingOutward[i] = true;
@@ -130,7 +169,7 @@ public class ObjectEmergenceManager : MonoBehaviour
                 // Move the object back to its initial position
                 selectedObject.transform.localPosition = Vector3.MoveTowards(
                     selectedObject.transform.localPosition,
-                    initialLocalPositions[objIndex],
+                    currentInitialPositions[objIndex],
                     moveSpeed * Time.deltaTime
                 );
             }
@@ -176,7 +215,7 @@ public class ObjectEmergenceManager : MonoBehaviour
         foreach (GameObject selectedObject in selectedObjects)
         {
             int objIndex = System.Array.IndexOf(objectsToOscillate, selectedObject);
-            if (Vector3.Distance(selectedObject.transform.localPosition, initialLocalPositions[objIndex]) >= 0.01f)
+            if (Vector3.Distance(selectedObject.transform.localPosition, currentInitialPositions[objIndex]) >= 0.01f)
             {
                 return false;
             }
@@ -212,5 +251,13 @@ public class ObjectEmergenceManager : MonoBehaviour
         {
             selectedObject.transform.GetChild(0).gameObject.SetActive(false);
         }
+    }
+
+    // Reset the emergence manager on game restart
+    private void ResetEmergenceManager()
+    {
+        ResetToOriginalInitialState();
+        InitializePositionsAndStatus();
+        SelectAndStartMovement();
     }
 }
