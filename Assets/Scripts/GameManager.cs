@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     {
         // Enable planet switching but disable planet rotation and other interactions
         playButton.SetActive(true);
-        planetSwitchButton.SetActive(true);
+       // planetSwitchButton.SetActive(true);
         // Stop other game mechanics
     }
 
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayDelay()
     {
         playButton.SetActive(false);
-        planetSwitchButton.SetActive(false);
+       // planetSwitchButton.SetActive(false);
         countdownText.gameObject.SetActive(true);
         // Countdown logic
         if (countdownText != null)

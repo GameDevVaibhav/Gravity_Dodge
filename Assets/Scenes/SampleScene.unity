@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &130788103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -205,19 +205,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 130788105}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 743443680}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnPlanetSwitchButtonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &130788105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,6 +800,7 @@ GameObject:
   - component: {fileID: 743443677}
   - component: {fileID: 743443679}
   - component: {fileID: 743443680}
+  - component: {fileID: 743443681}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -877,6 +866,20 @@ MonoBehaviour:
   planetSwitchButton: {fileID: 130788102}
   gameOverUI: {fileID: 1595055714}
   countdownText: {fileID: 1331895744}
+--- !u!114 &743443681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743443676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef44a5ecfd9dcbc478baa8a28171972a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planet: {fileID: 0}
+  rotationSpeed: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2089,8 +2092,8 @@ MonoBehaviour:
   planetPrefabs:
   - {fileID: 1054704357420224103, guid: f6d00c0274c9ced4e93a7f11e7fa1b12, type: 3}
   - {fileID: 1054704357420224103, guid: 97385a25411c44a448e2abfdfe5d013a, type: 3}
+  - {fileID: 1054704357420224103, guid: ac2669ee96b10384f9f6d8cf2852fd99, type: 3}
   planetContainer: {fileID: 1836231922}
-  switchButton: {fileID: 130788104}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
