@@ -123,7 +123,7 @@ public class ObjectEmergenceManager : MonoBehaviour
         ActivateChildObjects(set2Objects);
 
         ResetMovementStatus(set1Objects);
-        DebugStandbySet(); // Debug the standby set at the start
+        //DebugStandbySet(); // Debug the standby set at the start
     }
 
     // Update movements for the selected objects

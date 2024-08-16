@@ -880,6 +880,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
   rotationSpeed: 1
+  quickSwipeMultiplier: 20
+  swipeThreshold: 1
+  slowDownRate: 0.98
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
