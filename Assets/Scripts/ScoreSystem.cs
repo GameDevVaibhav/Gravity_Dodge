@@ -57,6 +57,7 @@ public class ScoreSystem : MonoBehaviour
     public void ResetScore()
     {
         currentScore = 0f;
+        scoreText.text = "";
         collectiblesSpawned = false;
     }
 

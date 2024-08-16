@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public enum GameState
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject planetSwitchButton;
     ScoreSystem scoreSystem;
     public GameObject gameOverUI;
+    public TextMeshProUGUI countdownText;
 
     private void Awake()
     {
@@ -68,8 +71,7 @@ public class GameManager : MonoBehaviour
     void EnterPlayState()
     {
         // Start the game: planet rotation, object emergence, collectibles, etc.
-        playButton.SetActive(false);
-        planetSwitchButton.SetActive(false);
+        
         // Enable other game mechanics
         
         scoreSystem.StartScore();
@@ -85,8 +87,29 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayButtonClicked()
     {
-        UpdateGameState(GameState.Play);
+        StartCoroutine(PlayDelay());
 
+    }
+
+    IEnumerator PlayDelay()
+    {
+        playButton.SetActive(false);
+        planetSwitchButton.SetActive(false);
+        countdownText.gameObject.SetActive(true);
+        // Countdown logic
+        if (countdownText != null)
+        {
+            for (int i = 3; i > 0; i--)
+            {
+                countdownText.text = i.ToString();
+                yield return new WaitForSeconds(1f);
+            }
+            countdownText.text = ""; // Clear countdown text after finishing
+            countdownText.gameObject.SetActive(false);
+        }
+
+       
+        UpdateGameState(GameState.Play);
     }
 
     public void OnPlanetSwitchButtonClicked()
@@ -111,6 +134,6 @@ public class GameManager : MonoBehaviour
 
         gameOverUI.SetActive(false);
 
-        UpdateGameState(GameState.Play);
+        StartCoroutine(PlayDelay());
     }
 }
