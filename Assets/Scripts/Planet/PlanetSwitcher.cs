@@ -10,6 +10,15 @@ public class PlanetSwitcher : MonoBehaviour
     private Vector2 endTouchPosition;
     private bool touchStartedOnPlanet = false;
 
+    void OnEnable()
+    {
+        GameManager.OnHome += OnHomeLoadPlanet; // Subscribe to OnHome event
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnHome -= OnHomeLoadPlanet; // Unsubscribe from OnHome event
+    }
     void Start()
     {
         // Ensure the first planet is instantiated at the start
@@ -130,5 +139,20 @@ public class PlanetSwitcher : MonoBehaviour
         // Instantiate the planet prefab and set it as a child of the planetContainer
         GameObject planet = Instantiate(planetPrefabs[index], planetContainer);
         planet.transform.localPosition = Vector3.zero; // Reset the position
+    }
+
+    void DestroyCurrentPlanet()
+    {
+        // Destroy the current planet in the container
+        if (planetContainer.childCount > 0)
+        {
+            Destroy(planetContainer.GetChild(0).gameObject);
+        }
+    }
+
+    void OnHomeLoadPlanet()
+    {
+        DestroyCurrentPlanet();
+        LoadPlanet(currentPlanetIndex);
     }
 }

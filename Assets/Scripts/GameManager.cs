@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public enum GameState
 {
@@ -15,10 +17,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public static event Action OnGameRestart;
+    public static event Action OnHome;
 
     public GameState currentState = GameState.Menu;
     public GameObject playButton;
     public GameObject planetSwitchButton;
+    public Button homeButton;
     ScoreSystem scoreSystem;
     public GameObject gameOverUI;
     public TextMeshProUGUI countdownText;
@@ -35,6 +39,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         scoreSystem = gameObject.GetComponent<ScoreSystem>();
+
+        homeButton.onClick.AddListener(Home);
     }
 
     private void Start()
@@ -64,7 +70,10 @@ public class GameManager : MonoBehaviour
     {
         // Enable planet switching but disable planet rotation and other interactions
         playButton.SetActive(true);
-       // planetSwitchButton.SetActive(true);
+        
+        gameOverUI.SetActive(false);
+
+        scoreSystem.ResetScore();
         // Stop other game mechanics
     }
 
@@ -136,4 +145,10 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(PlayDelay());
     }
+
+    void Home()
+    {
+        UpdateGameState(GameState.Menu);
+        OnHome?.Invoke();
+    } 
 }
