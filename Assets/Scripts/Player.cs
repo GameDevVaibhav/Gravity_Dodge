@@ -8,10 +8,10 @@ public class Player : MonoBehaviour
        Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
         if (obstacle != null)
         {
-            Debug.Log("Collision with obstacle");
+            //Debug.Log("Collision with obstacle");
 
-            // Change game state to GameOver
-            GameManager.Instance.UpdateGameState(GameState.GameOver);
+            //// Change game state to GameOver
+            //GameManager.Instance.UpdateGameState(GameState.GameOver);
         }
         Collectible collectible = other.gameObject.GetComponent<Collectible>();
         if (collectible != null)

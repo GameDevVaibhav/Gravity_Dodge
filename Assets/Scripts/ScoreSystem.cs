@@ -6,7 +6,7 @@ public class ScoreSystem : MonoBehaviour
     public TextMeshProUGUI scoreText;  // Reference to the UI text displaying the score
     public float scoreSpeed = 1f;      // Speed at which the score increases (units per second)
 
-    private float currentScore = 0f;   // Current score
+    public float currentScore = 0f;   // Current score
     private float scoreInterval;       // Interval at which the score increases
     private bool isGamePlaying = false;
     private bool collectiblesSpawned = false;  // To track if collectibles have already spawned
@@ -73,5 +73,10 @@ public class ScoreSystem : MonoBehaviour
         {
             Debug.LogError("No CollectibleSpawner found in the scene.");
         }
+    }
+
+    public int GetCurrentScore()
+    {
+        return (int)currentScore;
     }
 }
