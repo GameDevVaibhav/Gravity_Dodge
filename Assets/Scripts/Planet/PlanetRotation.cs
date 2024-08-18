@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlanetRotation : MonoBehaviour
 {
     public float rotationSpeed = 5f;  // Rotation speed
+    public float speedupMultiplier = 10f;
     public Transform objectOnPlanet;  // Reference to the object on the planet
 
     private Vector3 currentRotationDirection = Vector3.zero;  // Current rotation direction
@@ -78,5 +80,22 @@ public class PlanetRotation : MonoBehaviour
         //float objectRadius = objectOnPlanet.localScale.y / 2; // Assuming the object is a cube, change as needed
         //objectOnPlanet.position = transform.position + direction * (planetRadius + objectRadius);
         
+    }
+
+    public void SpeedUp()
+    {
+        StartCoroutine(SpeedUpRoutine());
+    }
+
+    private IEnumerator SpeedUpRoutine()
+    {
+        float originalSpeed = rotationSpeed;
+        rotationSpeed *= speedupMultiplier;
+
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
+
+        // Revert to the original rotation speed
+        rotationSpeed = originalSpeed;
     }
 }

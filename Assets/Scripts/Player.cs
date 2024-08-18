@@ -18,6 +18,12 @@ public class Player : MonoBehaviour
         {
             collectible.Collect();  // Collect the collectible
         }
+
+        Speedup speedup = other.gameObject.GetComponent<Speedup>();
+        if (speedup != null)
+        {
+            speedup.Collect();  // Collect the Speedup
+        }
     }
     
 }
