@@ -2,16 +2,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public PlanetRotation planetRotation;
+    private bool isInvincible;
+
     private void OnTriggerEnter(Collider other)
     {
+        if (planetRotation == null)
+        {
+            planetRotation = FindObjectOfType<PlanetRotation>();
+        }
+        
         //Check if the collided object has the Obstacle component
-       Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
+        Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
         if (obstacle != null)
         {
-            //Debug.Log("Collision with obstacle");
-
-            //// Change game state to GameOver
-            //GameManager.Instance.UpdateGameState(GameState.GameOver);
+            if (!isInvincible)
+            {
+                Debug.Log("Collision with obstacle");
+                GameManager.Instance.UpdateGameState(GameState.GameOver);
+            }
         }
         Collectible collectible = other.gameObject.GetComponent<Collectible>();
         if (collectible != null)
@@ -24,6 +33,11 @@ public class Player : MonoBehaviour
         {
             speedup.Collect();  // Collect the Speedup
         }
+    }
+
+    public void SetInvincible(bool isInvincible)
+    {
+        this.isInvincible = isInvincible;
     }
     
 }

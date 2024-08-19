@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     public TextMeshProUGUI countdownText;
 
+    public Player player;
+
     private void Awake()
     {
         if (Instance == null)
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         scoreSystem = gameObject.GetComponent<ScoreSystem>();
+
+        player=FindObjectOfType<Player>();
 
         homeButton.onClick.AddListener(Home);
     }
@@ -97,7 +101,7 @@ public class GameManager : MonoBehaviour
     public void OnPlayButtonClicked()
     {
         StartCoroutine(PlayDelay());
-
+        
     }
 
     IEnumerator PlayDelay()
@@ -119,8 +123,15 @@ public class GameManager : MonoBehaviour
 
        
         UpdateGameState(GameState.Play);
+        StartCoroutine(SetPlayerInvincible());
     }
-
+    
+    IEnumerator SetPlayerInvincible()
+    {
+        player.SetInvincible(true);
+        yield return new WaitForSeconds (3f);
+        player.SetInvincible(false);
+    }
     public void OnPlanetSwitchButtonClicked()
     {
         // Logic to switch the planet

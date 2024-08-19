@@ -7,6 +7,9 @@ public class PlanetRotation : MonoBehaviour
     public float speedupMultiplier = 10f;
     public Transform objectOnPlanet;  // Reference to the object on the planet
 
+    public Player player;
+
+
     private Vector3 currentRotationDirection = Vector3.zero;  // Current rotation direction
     private Vector2 touchStartPos;
     private Vector2 touchCurrentPos;
@@ -16,6 +19,8 @@ public class PlanetRotation : MonoBehaviour
     {
         // Set an initial rotation direction so the planet starts rotating immediately
         currentRotationDirection = new Vector3(1, 0, 0).normalized;
+
+        player=FindObjectOfType<Player>();
     }
 
     void Update()
@@ -90,12 +95,14 @@ public class PlanetRotation : MonoBehaviour
     private IEnumerator SpeedUpRoutine()
     {
         float originalSpeed = rotationSpeed;
+        player.SetInvincible(true); // Enable invincibility
         rotationSpeed *= speedupMultiplier;
 
         // Wait for 3 seconds
         yield return new WaitForSeconds(3f);
 
-        // Revert to the original rotation speed
+        // Revert to the original rotation speed and disable invincibility
         rotationSpeed = originalSpeed;
+        player.SetInvincible(false);
     }
 }
