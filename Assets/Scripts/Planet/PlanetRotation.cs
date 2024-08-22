@@ -18,7 +18,7 @@ public class PlanetRotation : MonoBehaviour
     private void Start()
     {
         // Set an initial rotation direction so the planet starts rotating immediately
-        currentRotationDirection = new Vector3(1, 0, 0).normalized;
+       // currentRotationDirection = new Vector3(1, 0, 0).normalized;
 
         player=FindObjectOfType<Player>();
     }

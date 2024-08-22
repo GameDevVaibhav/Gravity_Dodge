@@ -74,4 +74,9 @@ public class DifficultyManager : MonoBehaviour
         // Increase rotation speed by 1.5x each time the cycle of objects 3-10 resets
         return baseRotationSpeed * Mathf.Pow(1.5f, cycleCount);
     }
+
+    public float GetObstacleMoveSpeed()
+    {
+        return emergenceManager.moveSpeed;
+    }
 }
