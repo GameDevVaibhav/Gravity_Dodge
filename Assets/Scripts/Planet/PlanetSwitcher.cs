@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlanetSwitcher : MonoBehaviour
 {
@@ -9,6 +12,10 @@ public class PlanetSwitcher : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private bool touchStartedOnPlanet = false;
+    private bool touchStartedOnUI = false;
+
+    private EventSystem eventSystem;
+    public GraphicRaycaster graphicRaycaster;
 
     void OnEnable()
     {
@@ -23,11 +30,16 @@ public class PlanetSwitcher : MonoBehaviour
     {
         // Ensure the first planet is instantiated at the start
         LoadPlanet(currentPlanetIndex);
+
+        // Get the EventSystem and GraphicRaycaster components
+        eventSystem = EventSystem.current;
+       
     }
 
     void Update()
     {
         if (GameManager.Instance.currentState != GameState.Menu) { return; }
+       
         DetectSwipe();
     }
 
@@ -42,10 +54,12 @@ public class PlanetSwitcher : MonoBehaviour
             {
                 startTouchPosition = touch.position;
                 touchStartedOnPlanet = IsTouchOnPlanet(touch.position);
+                touchStartedOnUI=IsPointerOverUIObject();
+
             }
             else if (touch.phase == TouchPhase.Ended)
             {
-                if (!touchStartedOnPlanet)
+                if (!touchStartedOnPlanet && !touchStartedOnUI)
                 {
                     endTouchPosition = touch.position;
                     HandleSwipe();
@@ -87,16 +101,35 @@ public class PlanetSwitcher : MonoBehaviour
         }
     }
 
+    private bool IsPointerOverUIObject()
+    {
+        // Create a PointerEventData
+        PointerEventData pointerEventData = new PointerEventData(eventSystem);
+        // Set the position of the pointer
+        pointerEventData.position = Input.mousePosition;
+
+        // Create a list to store the results of the raycast
+        RaycastResult raycastResult = new RaycastResult();
+
+        // Perform a raycast to check if the pointer is over a UI element
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        graphicRaycaster.Raycast(pointerEventData, raycastResults);
+
+        // If the raycast hits any UI element, return true
+        return raycastResults.Count > 0;
+    }
+
     bool IsTouchOnPlanet(Vector2 touchPosition)
     {
         Ray ray = Camera.main.ScreenPointToRay(touchPosition);
         RaycastHit hit;
-
+        Debug.Log(IsPointerOverUIObject());
         if (Physics.Raycast(ray, out hit))
         {
             // Check if the raycast hit the planet
             if (hit.transform.IsChildOf(planetContainer))
             {
+                
                 return true;
             }
         }
