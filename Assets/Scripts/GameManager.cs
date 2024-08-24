@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         // Handle game over logic
         scoreSystem.StopScore();
         ShowGameOverUI();
-        
+        CollectibleManager.Instance.SaveCollectibleCounts();
     }
 
     public void OnPlayButtonClicked()

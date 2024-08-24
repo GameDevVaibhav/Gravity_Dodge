@@ -48,25 +48,25 @@ public class DifficultyManager : MonoBehaviour
     float GetPauseDuration(int levelCycle)
     {
         // Cycle through pause durations: 2f, 1f, 0f
-        switch (levelCycle % 3)
+        return (levelCycle % 3) switch
         {
-            case 0: return 2f;
-            case 1: return 1f;
-            case 2: return 0f;
-            default: return 2f;
-        }
+            0 => 2f,
+            1 => 1f,
+            2 => 0f,
+            _ => 2f,
+        };
     }
 
     float GetMoveSpeed(int levelCycle)
     {
         // Cycle through move speeds: 2f, 4f, 8f
-        switch (levelCycle % 3)
+        return (levelCycle % 3) switch
         {
-            case 0: return 2f;
-            case 1: return 4f;
-            case 2: return 8f;
-            default: return 2f;
-        }
+            0 => 2f,
+            1 => 4f,
+            2 => 8f,
+            _ => 2f,
+        };
     }
 
     float GetRotationSpeed(int cycleCount)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4652189523406754691}
   - component: {fileID: -7882744824430225440}
   m_Layer: 0
-  m_Name: Collectible
+  m_Name: Collectible_Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,3 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ac493b72a07864fa9aeb011833cdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectibleType: 1

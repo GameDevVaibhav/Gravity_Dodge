@@ -8,8 +8,7 @@ public class ObjectEmergenceManager : MonoBehaviour
     public float pauseDuration = 2f;          // Duration to pause at the target position
     public Transform planetCenter;            // Reference to the planet's center
     public int numberOfObjectsToEmerge = 6;   // Number of objects to randomly select for emergence
-    public GameObject vfxPrefab;
-    public Vector3 vfxOffset;
+    
 
     private Vector3[] originalInitialPositions; // Array to store the original initial positions
     private bool[] originalInitialStatuses;    // Array to store the original initial active statuses
@@ -158,16 +157,7 @@ public class ObjectEmergenceManager : MonoBehaviour
             if (movingOutward[objIndex])
             {
                 
-                // Instantiate the VFX at the beginning of the outward movement
-                if (selectedObject.transform.localPosition == currentInitialPositions[objIndex])
-                {
-                    // Calculate the world position for the VFX with offset
-                    Vector3 worldPosition = selectedObject.transform.TransformPoint(vfxOffset);
-
-                    // Instantiate the VFX at the calculated world position
-                    GameObject vfxInstance = Instantiate(vfxPrefab, worldPosition, selectedObject.transform.localRotation, gameObject.transform);
-
-                }
+               
                 // Move the object outward (from initial position to target position)
                 selectedObject.transform.localPosition = Vector3.MoveTowards(
                     selectedObject.transform.localPosition,

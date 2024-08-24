@@ -2354,9 +2354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefabs:
   - {fileID: 2659577167405011120, guid: fb540b128e3def94288a0c3500288a6e, type: 3}
-  - {fileID: 1054704357420224103, guid: f6d00c0274c9ced4e93a7f11e7fa1b12, type: 3}
-  - {fileID: 1054704357420224103, guid: 727f602398e5966478bf691497949602, type: 3}
+  - {fileID: 2659577167405011120, guid: 3ec580ba1a133bc4cbcd7abf398dc6d8, type: 3}
   planetContainer: {fileID: 1836231922}
+  graphicRaycaster: {fileID: 1223446451}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

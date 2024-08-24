@@ -1,9 +1,12 @@
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
 {
     public static CollectibleManager Instance { get; private set; }
-    private int collectibleCount = 0;
+
+    private Dictionary<Collectible.CollectibleType, int> collectibleCounts = new Dictionary<Collectible.CollectibleType, int>();
 
     private void Awake()
     {
@@ -16,12 +19,26 @@ public class CollectibleManager : MonoBehaviour
         {
             Destroy(gameObject);  // Ensure only one instance exists
         }
+
+        // Load collectible counts from JSON
+        collectibleCounts = DataLoader.LoadCollectibleCounts();
+        
     }
 
-    public void CollectCollectible()
+    public void CollectCollectible(Collectible.CollectibleType type)
     {
-        collectibleCount++;
-        Debug.Log("Collectibles collected: " + collectibleCount);
-        // You can also update UI or trigger other game events here
+        collectibleCounts[type]++;
+        Debug.Log(type + " collected. Total: " + collectibleCounts[type]);
+
+        
     }
+
+    public void SaveCollectibleCounts()
+    {
+        CollectibleData data = new CollectibleData(collectibleCounts);
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(Application.persistentDataPath + "/collectibleCounts.json", json);
+        Debug.Log("Collectible counts saved to " + Application.persistentDataPath + "/collectibleCounts.json");
+    }
+
 }
