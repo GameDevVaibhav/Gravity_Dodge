@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlanetSwitcher : MonoBehaviour
 {
     public GameObject[] planetPrefabs; // Array to hold different planet prefabs
+    private bool[] planetUnlockedStatus;
     public Transform planetContainer;  // Reference to the container for the planet
 
     private int currentPlanetIndex = 0; // To keep track of the current planet
@@ -28,6 +29,9 @@ public class PlanetSwitcher : MonoBehaviour
     }
     void Start()
     {
+        // Load planet unlocked status from JSON
+        planetUnlockedStatus = DataLoader.LoadPlanetUnlockedStatus(planetPrefabs.Length);
+
         // Ensure the first planet is instantiated at the start
         LoadPlanet(currentPlanetIndex);
 
@@ -108,9 +112,7 @@ public class PlanetSwitcher : MonoBehaviour
         // Set the position of the pointer
         pointerEventData.position = Input.mousePosition;
 
-        // Create a list to store the results of the raycast
-        RaycastResult raycastResult = new RaycastResult();
-
+       
         // Perform a raycast to check if the pointer is over a UI element
         List<RaycastResult> raycastResults = new List<RaycastResult>();
         graphicRaycaster.Raycast(pointerEventData, raycastResults);
@@ -187,5 +189,15 @@ public class PlanetSwitcher : MonoBehaviour
     {
         DestroyCurrentPlanet();
         LoadPlanet(currentPlanetIndex);
+    }
+
+    public void PlanetUnlockStatusUpdate()
+    {
+        planetUnlockedStatus= DataLoader.LoadPlanetUnlockedStatus(planetPrefabs.Length);
+    }
+
+    public bool IsCurrentPlanetLocked()
+    {
+        return !planetUnlockedStatus[currentPlanetIndex];
     }
 }

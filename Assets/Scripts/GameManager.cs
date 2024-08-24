@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    public PlanetSwitcher planetSwitcher;
+    public int PlanetCount;
+
     private int currentHighScore;
 
     private void Awake()
@@ -46,11 +49,15 @@ public class GameManager : MonoBehaviour
 
         player=FindObjectOfType<Player>();
 
+        planetSwitcher = FindObjectOfType<PlanetSwitcher>();
+        PlanetCount = planetSwitcher.planetPrefabs.Length;
+
         homeButton.onClick.AddListener(Home);
     }
 
     private void Start()
     {
+        
         UpdateGameState(GameState.Menu);
         currentHighScore = DataLoader.LoadHighScore();
     }
@@ -81,6 +88,9 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(false);
 
         scoreSystem.ResetScore();
+
+        FindObjectOfType<PlanetUnlockCondition>().CheckAllUnlockStatuses();
+        planetSwitcher.PlanetUnlockStatusUpdate();
         // Stop other game mechanics
     }
 
@@ -110,6 +120,14 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayButtonClicked()
     {
+        // Check if the selected planet is locked
+        if (planetSwitcher.IsCurrentPlanetLocked())
+        {
+            Debug.Log("Planet is locked!");
+            return; // Exit the method if the planet is locked
+        }
+
+
         StartCoroutine(PlayDelay());
         
     }
@@ -142,10 +160,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds (3f);
         player.SetInvincible(false);
     }
-    public void OnPlanetSwitchButtonClicked()
-    {
-        // Logic to switch the planet
-    }
+   
 
     private void ShowGameOverUI()
     {

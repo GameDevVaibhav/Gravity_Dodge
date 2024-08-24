@@ -923,6 +923,7 @@ GameObject:
   - component: {fileID: 743443679}
   - component: {fileID: 743443680}
   - component: {fileID: 743443681}
+  - component: {fileID: 743443682}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -991,6 +992,8 @@ MonoBehaviour:
   gameOverUI: {fileID: 1595055714}
   countdownText: {fileID: 1331895744}
   player: {fileID: 0}
+  planetSwitcher: {fileID: 1836231923}
+  PlanetCount: 0
 --- !u!114 &743443681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,6 +1011,30 @@ MonoBehaviour:
   quickSwipeMultiplier: 20
   swipeThreshold: 1
   slowDownRate: 0.98
+--- !u!114 &743443682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743443676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c77ac5fc478a85498c2367df09763e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetUnlockConditions:
+  - unlockConditions:
+    - collectibleType: 0
+      requiredAmount: 0
+  - unlockConditions:
+    - collectibleType: 0
+      requiredAmount: 20
+  - unlockConditions:
+    - collectibleType: 0
+      requiredAmount: 25
+    - collectibleType: 1
+      requiredAmount: 10
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,6 +2382,7 @@ MonoBehaviour:
   planetPrefabs:
   - {fileID: 2659577167405011120, guid: fb540b128e3def94288a0c3500288a6e, type: 3}
   - {fileID: 2659577167405011120, guid: 3ec580ba1a133bc4cbcd7abf398dc6d8, type: 3}
+  - {fileID: 2659577167405011120, guid: 3ffd92bd517a2e0478ce293d5f8ccc6e, type: 3}
   planetContainer: {fileID: 1836231922}
   graphicRaycaster: {fileID: 1223446451}
 --- !u!1660057539 &9223372036854775807
