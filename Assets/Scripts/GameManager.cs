@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    private int currentHighScore;
+
     private void Awake()
     {
         if (Instance == null)
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.Menu);
+        currentHighScore = DataLoader.LoadHighScore();
     }
 
     public void UpdateGameState(GameState newState)
@@ -96,6 +99,13 @@ public class GameManager : MonoBehaviour
         scoreSystem.StopScore();
         ShowGameOverUI();
         CollectibleManager.Instance.SaveCollectibleCounts();
+
+        int finalScore = scoreSystem.GetCurrentScore();
+        if (finalScore > currentHighScore)
+        {
+            DataLoader.SaveHighScore(finalScore); // Update high score if necessary
+            currentHighScore = finalScore;
+        }
     }
 
     public void OnPlayButtonClicked()

@@ -2,17 +2,17 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class DataLoader 
+public class DataLoader
 {
-    
-    
+    private static string collectibleFilePath = Application.persistentDataPath + "/collectibleCounts.json";
+    private static string highScoreFilePath = Application.persistentDataPath + "/highScore.json";
+
+    // Load collectible counts from file
     public static Dictionary<Collectible.CollectibleType, int> LoadCollectibleCounts()
     {
-         string filePath = Application.persistentDataPath + "/collectibleCounts.json";
-
-        if (File.Exists(filePath))
+        if (File.Exists(collectibleFilePath))
         {
-            string json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(collectibleFilePath);
             CollectibleData data = JsonUtility.FromJson<CollectibleData>(json);
 
             Dictionary<Collectible.CollectibleType, int> collectibleCounts = new Dictionary<Collectible.CollectibleType, int>();
@@ -21,7 +21,7 @@ public class DataLoader
                 collectibleCounts[collectible.type] = collectible.count;
             }
 
-            Debug.Log("Collectible counts loaded from " + filePath);
+            Debug.Log("Collectible counts loaded from " + collectibleFilePath);
             return collectibleCounts;
         }
         else
@@ -43,13 +43,51 @@ public class DataLoader
 
     private static void CreateCollectibleCountsFile()
     {
-        CollectibleData data=new CollectibleData(InitializeDefaultCollectibleCounts());
+        CollectibleData data = new CollectibleData(InitializeDefaultCollectibleCounts());
 
-        string filePath = Application.persistentDataPath + "/collectibleCounts.json";
-        string json=JsonUtility.ToJson(data,true);
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(collectibleFilePath, json);
 
-        File.WriteAllText(filePath, json);
+        Debug.Log("Created Default file for collectibles");
+    }
 
-        Debug.Log("Created Default file");
+    // Load high score from file
+    public static int LoadHighScore()
+    {
+        if (File.Exists(highScoreFilePath))
+        {
+            string json = File.ReadAllText(highScoreFilePath);
+            HighScoreData data = JsonUtility.FromJson<HighScoreData>(json);
+            Debug.Log("High score loaded: " + data.highScore);
+            return data.highScore;
+        }
+        else
+        {
+            CreateHighScoreFile();
+            return 0; // Default high score
+        }
+    }
+
+    private static void CreateHighScoreFile()
+    {
+        HighScoreData data = new HighScoreData { highScore = 0 };
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(highScoreFilePath, json);
+
+        Debug.Log("Created Default file for high score");
+    }
+
+    // Save high score to file
+    public static void SaveHighScore(int newHighScore)
+    {
+        HighScoreData data = new HighScoreData { highScore = newHighScore };
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(highScoreFilePath, json);
+
+        Debug.Log("High score updated: " + newHighScore);
     }
 }
+
+
