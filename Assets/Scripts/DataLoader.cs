@@ -121,12 +121,10 @@ public class DataLoader
 
     private static void CreatePlanetUnlockedStatusFile(int planetCount)
     {
-        PlanetUnlockData data = new PlanetUnlockData { planetUnlockedStatus = InitializeDefaultPlanetUnlockStatus(planetCount) };
+        bool[] defaultStatus = InitializeDefaultPlanetUnlockStatus(planetCount);
+        SavePlanetUnlockedStatus(defaultStatus);
 
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(planetUnlockFilePath, json);
-
-        Debug.Log("Created Default file for planet unlock status");
+        Debug.Log("Created default planet unlock status file");
     }
 
     // Save planet unlocked status to file

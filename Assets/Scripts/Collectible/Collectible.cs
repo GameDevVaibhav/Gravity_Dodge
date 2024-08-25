@@ -24,6 +24,15 @@ public class Collectible : MonoBehaviour
 
     public void Collect()
     {
+        // Access the sprite corresponding to the collectible type from the CollectibleSpriteManager
+        Sprite collectedSprite = CollectibleSpriteManager.Instance.GetSpriteForType(collectibleType);
+
+        if (collectedSprite != null)
+        {
+            // Use the collectedSprite for any purpose, such as UI display, etc.
+            Debug.Log("Collected a " + collectibleType + " with sprite: " + collectedSprite.name);
+        }
+
         // Notify the CollectibleManager that this collectible has been collected
         CollectibleManager.Instance.CollectCollectible(collectibleType);
 

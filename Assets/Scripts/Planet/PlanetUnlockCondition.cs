@@ -21,10 +21,14 @@ public class PlanetUnlockCondition : MonoBehaviour
 
     private bool[] isUnlocked;
 
-    private void Start()
+    private void Awake()
     {
         // Initialize isUnlocked array based on the number of planets
         isUnlocked = new bool[planetUnlockConditions.Length];
+    }
+    private void Start()
+    {
+        
 
         // Load initial unlock statuses
         CheckAllUnlockStatuses();

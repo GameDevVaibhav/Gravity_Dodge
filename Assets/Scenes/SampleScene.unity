@@ -924,6 +924,7 @@ GameObject:
   - component: {fileID: 743443680}
   - component: {fileID: 743443681}
   - component: {fileID: 743443682}
+  - component: {fileID: 743443683}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1029,12 +1030,31 @@ MonoBehaviour:
       requiredAmount: 0
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 20
+      requiredAmount: 5
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 25
+      requiredAmount: 5
     - collectibleType: 1
-      requiredAmount: 10
+      requiredAmount: 2
+--- !u!114 &743443683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743443676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb950647aa0c1248a11e83e262d10d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleSprites:
+  - type: 0
+    sprite: {fileID: 21300000, guid: 9ca01e690a528624c96c26011345d54e, type: 3}
+  - type: 1
+    sprite: {fileID: 21300000, guid: 7ca72c3fa01107148978e66cf54d3eb0, type: 3}
+  - type: 2
+    sprite: {fileID: 21300000, guid: ce93710a96a9ca34db56494de3099ac7, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
