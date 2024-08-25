@@ -921,10 +921,10 @@ GameObject:
   - component: {fileID: 743443678}
   - component: {fileID: 743443677}
   - component: {fileID: 743443679}
+  - component: {fileID: 743443683}
   - component: {fileID: 743443680}
   - component: {fileID: 743443681}
   - component: {fileID: 743443682}
-  - component: {fileID: 743443683}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -994,6 +994,7 @@ MonoBehaviour:
   countdownText: {fileID: 1331895744}
   player: {fileID: 0}
   planetSwitcher: {fileID: 1836231923}
+  planetUnlockUI: {fileID: 1223446455}
   PlanetCount: 0
 --- !u!114 &743443681
 MonoBehaviour:
@@ -1028,6 +1029,8 @@ MonoBehaviour:
   - unlockConditions:
     - collectibleType: 0
       requiredAmount: 0
+    - collectibleType: 1
+      requiredAmount: 3
   - unlockConditions:
     - collectibleType: 0
       requiredAmount: 5
@@ -1048,13 +1051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb950647aa0c1248a11e83e262d10d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleSprites:
-  - type: 0
-    sprite: {fileID: 21300000, guid: 9ca01e690a528624c96c26011345d54e, type: 3}
-  - type: 1
-    sprite: {fileID: 21300000, guid: 7ca72c3fa01107148978e66cf54d3eb0, type: 3}
-  - type: 2
-    sprite: {fileID: 21300000, guid: ce93710a96a9ca34db56494de3099ac7, type: 3}
+  collectibleSpriteData: {fileID: 11400000, guid: a8759862a9ebaab4d95c36bf2d95ad28,
+    type: 2}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1450,7 @@ GameObject:
   - component: {fileID: 1223446453}
   - component: {fileID: 1223446452}
   - component: {fileID: 1223446451}
+  - component: {fileID: 1223446455}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1539,6 +1538,7 @@ RectTransform:
   - {fileID: 623871108}
   - {fileID: 1595055717}
   - {fileID: 1331895746}
+  - {fileID: 2118929643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1546,6 +1546,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1223446455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223446450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efb9ca5afddebf4ebc9c320b6f11751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionEntryPrefab: {fileID: 6423866064999214483, guid: 1a622da7276912e4ba88e5ad94a5219a,
+    type: 3}
+  conditionsContainer: {fileID: 2118929643}
+  planetSwitcher: {fileID: 1836231923}
 --- !u!1 &1262363690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,7 +2420,69 @@ MonoBehaviour:
   - {fileID: 2659577167405011120, guid: 3ec580ba1a133bc4cbcd7abf398dc6d8, type: 3}
   - {fileID: 2659577167405011120, guid: 3ffd92bd517a2e0478ce293d5f8ccc6e, type: 3}
   planetContainer: {fileID: 1836231922}
+  currentPlanetIndex: 0
   graphicRaycaster: {fileID: 1223446451}
+  planetUnlockUI: {fileID: 1223446455}
+--- !u!1 &2118929642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2118929643}
+  - component: {fileID: 2118929644}
+  m_Layer: 5
+  m_Name: ConditionContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2118929643
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118929642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1223446454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -684.1672}
+  m_SizeDelta: {x: 1080, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2118929644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118929642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 500, y: 160}
+  m_Spacing: {x: 20, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

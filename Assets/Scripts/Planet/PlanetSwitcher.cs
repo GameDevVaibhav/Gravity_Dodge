@@ -9,7 +9,7 @@ public class PlanetSwitcher : MonoBehaviour
     private bool[] planetUnlockedStatus;
     public Transform planetContainer;  // Reference to the container for the planet
 
-    private int currentPlanetIndex = 0; // To keep track of the current planet
+    public int currentPlanetIndex = 0; // To keep track of the current planet
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private bool touchStartedOnPlanet = false;
@@ -17,6 +17,8 @@ public class PlanetSwitcher : MonoBehaviour
 
     private EventSystem eventSystem;
     public GraphicRaycaster graphicRaycaster;
+
+    public PlanetUnlockUI planetUnlockUI;
 
     void OnEnable()
     {
@@ -174,6 +176,8 @@ public class PlanetSwitcher : MonoBehaviour
         // Instantiate the planet prefab and set it as a child of the planetContainer
         GameObject planet = Instantiate(planetPrefabs[index], planetContainer);
         planet.transform.localPosition = Vector3.zero; // Reset the position
+
+        planetUnlockUI.UpdateUnlockConditionsUI();
     }
 
     void DestroyCurrentPlanet()

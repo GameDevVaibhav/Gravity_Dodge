@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
     ScoreSystem scoreSystem;
     public GameObject gameOverUI;
     public TextMeshProUGUI countdownText;
+    public GameObject conditionsUI;
 
     public Player player;
 
     public PlanetSwitcher planetSwitcher;
+    public PlanetUnlockUI planetUnlockUI;
     public int PlanetCount;
 
     private int currentHighScore;
@@ -85,12 +87,16 @@ public class GameManager : MonoBehaviour
         // Enable planet switching but disable planet rotation and other interactions
         playButton.SetActive(true);
         
+        conditionsUI.SetActive(true);
+        
         gameOverUI.SetActive(false);
 
         scoreSystem.ResetScore();
 
         FindObjectOfType<PlanetUnlockCondition>().CheckAllUnlockStatuses();
         planetSwitcher.PlanetUnlockStatusUpdate();
+        planetUnlockUI.UpdateUnlockConditionsUI();
+
         // Stop other game mechanics
     }
 
@@ -101,6 +107,7 @@ public class GameManager : MonoBehaviour
         // Enable other game mechanics
         
         scoreSystem.StartScore();
+        
     }
 
     void EnterGameOverState()
@@ -126,7 +133,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Planet is locked!");
             return; // Exit the method if the planet is locked
         }
-
+        conditionsUI.SetActive(false);
+        playButton.SetActive(false);
 
         StartCoroutine(PlayDelay());
         
@@ -134,7 +142,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PlayDelay()
     {
-        playButton.SetActive(false);
+        
        // planetSwitchButton.SetActive(false);
         countdownText.gameObject.SetActive(true);
         // Countdown logic

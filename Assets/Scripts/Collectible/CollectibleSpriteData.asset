@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b95c8d58892074c935996975327c57, type: 3}
   m_Name: CollectibleSpriteData
   m_EditorClassIdentifier: 
-  collectibleSprites: []
+  collectibleSprites:
+  - type: 0
+    sprite: {fileID: 21300000, guid: 9ca01e690a528624c96c26011345d54e, type: 3}
+  - type: 1
+    sprite: {fileID: 21300000, guid: 7ca72c3fa01107148978e66cf54d3eb0, type: 3}
+  - type: 2
+    sprite: {fileID: 21300000, guid: ce93710a96a9ca34db56494de3099ac7, type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: 0bd1a71ddc3616942ae511139cce40db, type: 3}
+  - type: 4
+    sprite: {fileID: 21300000, guid: 5f97d99ccf236a744be35c01d1b55c91, type: 3}
+  - type: 5
+    sprite: {fileID: 21300000, guid: e3cf56c66819bfe448e1f866a50f6832, type: 3}
+  - type: 6
+    sprite: {fileID: 21300000, guid: af7a8c65eb734e340a8213d5b038612b, type: 3}
