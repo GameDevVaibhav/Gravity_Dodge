@@ -94,6 +94,9 @@ public class GameManager : MonoBehaviour
         scoreSystem.ResetScore();
 
         FindObjectOfType<PlanetUnlockCondition>().CheckAllUnlockStatuses();
+        FindAnyObjectByType<VehicleUnlockCondition>().CheckAllUnlockStatuses();
+        FindAnyObjectByType<VehicleSelectionManager>().LoadVehicleUnlockStatus();
+
         planetSwitcher.PlanetUnlockStatusUpdate();
         planetUnlockUI.UpdateUnlockConditionsUI();
 

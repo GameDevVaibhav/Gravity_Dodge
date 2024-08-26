@@ -7,6 +7,7 @@ public class DataLoader
     private static string collectibleFilePath = Application.persistentDataPath + "/collectibleCounts.json";
     private static string highScoreFilePath = Application.persistentDataPath + "/highScore.json";
     private static string planetUnlockFilePath = Application.persistentDataPath + "/planetUnlockedStatus.json";
+    private static string vehicleUnlockFilePath = Application.persistentDataPath + "/vehicleUnlockedStatus.json";
 
     // Load collectible counts from file
     public static Dictionary<Collectible.CollectibleType, int> LoadCollectibleCounts()
@@ -137,6 +138,57 @@ public class DataLoader
 
         Debug.Log("Planet unlock status updated");
     }
+
+
+    // Load vehicle unlocked status from file
+    public static bool[] LoadVehicleUnlockedStatus(int vehicleCount)
+    {
+        if (File.Exists(vehicleUnlockFilePath))
+        {
+            string json = File.ReadAllText(vehicleUnlockFilePath);
+            VehicleUnlockData data = JsonUtility.FromJson<VehicleUnlockData>(json);
+
+            Debug.Log("Vehicle unlock status loaded from " + vehicleUnlockFilePath);
+            return data.vehicleUnlockedStatus;
+        }
+        else
+        {
+            CreateVehicleUnlockedStatusFile(vehicleCount);
+            return InitializeDefaultVehicleUnlockStatus(vehicleCount);
+        }
+    }
+
+    private static bool[] InitializeDefaultVehicleUnlockStatus(int vehicleCount)
+    {
+        bool[] defaultStatus = new bool[vehicleCount];
+        defaultStatus[0] = true; // Unlock the first vehicle by default
+        for (int i = 1; i < vehicleCount; i++)
+        {
+            defaultStatus[i] = false; // Lock all other vehicles by default
+        }
+        return defaultStatus;
+    }
+
+    private static void CreateVehicleUnlockedStatusFile(int vehicleCount)
+    {
+        bool[] defaultStatus = InitializeDefaultVehicleUnlockStatus(vehicleCount);
+        SaveVehicleUnlockedStatus(defaultStatus);
+
+        Debug.Log("Created default vehicle unlock status file");
+    }
+
+    // Save vehicle unlocked status to file
+    public static void SaveVehicleUnlockedStatus(bool[] status)
+    {
+        VehicleUnlockData data = new VehicleUnlockData { vehicleUnlockedStatus = status };
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(vehicleUnlockFilePath, json);
+
+        Debug.Log("Vehicle unlock status updated");
+    }
 }
+
+
 
 
