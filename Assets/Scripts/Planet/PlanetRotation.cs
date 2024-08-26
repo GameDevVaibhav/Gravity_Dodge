@@ -18,7 +18,7 @@ public class PlanetRotation : MonoBehaviour
     private void Start()
     {
         // Set an initial rotation direction so the planet starts rotating immediately
-       // currentRotationDirection = new Vector3(1, 0, 0).normalized;
+        currentRotationDirection = new Vector3(1, 0, 0).normalized;
 
         player=FindObjectOfType<Player>();
     }
@@ -39,6 +39,7 @@ public class PlanetRotation : MonoBehaviour
 
         // Ensure the object stays on the surface of the planet
         PositionObjectOnSurface();
+        RotatePlayer();
     }
 
     void HandleTouchInput()
@@ -73,6 +74,7 @@ public class PlanetRotation : MonoBehaviour
                 touchStartPos = touchCurrentPos;
             }
         }
+        
     }
 
     void PositionObjectOnSurface()
@@ -85,6 +87,17 @@ public class PlanetRotation : MonoBehaviour
         //float objectRadius = objectOnPlanet.localScale.y / 2; // Assuming the object is a cube, change as needed
         //objectOnPlanet.position = transform.position + direction * (planetRadius + objectRadius);
         
+    }
+    void RotatePlayer()
+    {
+        // Calculate the direction opposite to the planet's rotation
+        Vector3 oppositeRotationDirection = currentRotationDirection;
+
+        // Convert the rotation direction to an angle
+        float angle = Mathf.Atan2(oppositeRotationDirection.y, oppositeRotationDirection.x) * Mathf.Rad2Deg;
+
+        // Apply the rotation to the player's z axis
+        player.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     public void SpeedUp()
@@ -105,4 +118,6 @@ public class PlanetRotation : MonoBehaviour
         rotationSpeed = originalSpeed;
         player.SetInvincible(false);
     }
+
+
 }
