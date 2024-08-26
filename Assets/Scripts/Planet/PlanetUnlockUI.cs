@@ -8,7 +8,7 @@ public class PlanetUnlockUI : MonoBehaviour
     public GameObject conditionEntryPrefab; // The prefab for displaying a condition
     public Transform conditionsContainer; // The container for all condition entries
 
-    private PlanetUnlockCondition planetUnlockCondition;
+    public PlanetUnlockCondition planetUnlockCondition;
     public PlanetSwitcher planetSwitcher;
 
     private void Start()
@@ -38,8 +38,8 @@ public class PlanetUnlockUI : MonoBehaviour
             GameObject conditionEntry = Instantiate(conditionEntryPrefab, conditionsContainer);
 
             // Get the components from the instantiated prefab
-            Image collectibleImage = conditionEntry.transform.GetChild(0).GetComponent<Image>();
-            TextMeshProUGUI progressText = conditionEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            Image collectibleImage = conditionEntry.transform.GetChild(1).GetComponent<Image>();
+            TextMeshProUGUI progressText = conditionEntry.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
 
             // Set the collectible sprite
             Sprite collectibleSprite = CollectibleSpriteManager.Instance.GetSpriteForType(condition.collectibleType);
@@ -51,14 +51,14 @@ public class PlanetUnlockUI : MonoBehaviour
             progressText.text = $"{currentAmount}/{condition.requiredAmount}";
 
             // Optionally, you could disable the prefab if the condition is met
-            if (currentAmount >= condition.requiredAmount)
-            {
-                progressText.color = Color.green; // Indicate completion
-            }
-            else
-            {
-                progressText.color = Color.red; // Indicate remaining
-            }
+            //if (currentAmount >= condition.requiredAmount)
+            //{
+            //    progressText.color = Color.green; // Indicate completion
+            //}
+            //else
+            //{
+            //    progressText.color = Color.red; // Indicate remaining
+            //}
         }
     }
 }
