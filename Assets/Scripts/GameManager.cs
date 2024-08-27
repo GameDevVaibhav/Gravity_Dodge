@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Button homeButton;
     ScoreSystem scoreSystem;
     public GameObject gameOverUI;
+    public TextMeshProUGUI finalScore;
     public TextMeshProUGUI countdownText;
     public GameObject conditionsUI;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public PlanetSwitcher planetSwitcher;
     public PlanetUnlockUI planetUnlockUI;
+    public VehicleUnlockUI vehicleUnlockUI;
     public int PlanetCount;
 
     private int currentHighScore;
@@ -99,6 +101,8 @@ public class GameManager : MonoBehaviour
 
         planetSwitcher.PlanetUnlockStatusUpdate();
         planetUnlockUI.UpdateUnlockConditionsUI();
+        vehicleUnlockUI.UpdateUnlockConditionsUI();
+
 
         // Stop other game mechanics
     }
@@ -121,6 +125,9 @@ public class GameManager : MonoBehaviour
         CollectibleManager.Instance.SaveCollectibleCounts();
 
         int finalScore = scoreSystem.GetCurrentScore();
+
+        this.finalScore.text=finalScore.ToString();
+
         if (finalScore > currentHighScore)
         {
             DataLoader.SaveHighScore(finalScore); // Update high score if necessary

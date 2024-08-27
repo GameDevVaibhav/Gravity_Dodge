@@ -15,7 +15,9 @@ public class VehicleSelectionManager : MonoBehaviour
 
     public bool[] vehicleUnlockStatus; // Array to track which vehicles are unlocked (true = unlocked, false = locked)
     private GameObject currentVehicle; // The currently equipped vehicle
-    private VehicleData selectedVehicleData; // The vehicle data of the currently selected vehicle
+    public VehicleData selectedVehicleData; // The vehicle data of the currently selected vehicle
+    public VehicleUnlockUI vehicleUnlockUI;
+
 
     private void Start()
     {
@@ -63,7 +65,8 @@ public class VehicleSelectionManager : MonoBehaviour
         selectedVehicleThumbnail.sprite = vehicle.thumbnail;
         selectedVehicleName.text = vehicle.vehicleName;
         equipButton.interactable = true; // Enable the equip button now that a vehicle is selected
-    }
+        vehicleUnlockUI.UpdateUnlockConditionsUI();
+}
 
     // Equips the selected vehicle
     private void EquipSelectedVehicle()
