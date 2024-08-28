@@ -19,6 +19,7 @@ public class PlanetSwitcher : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
 
     public PlanetUnlockUI planetUnlockUI;
+    public ChangeSkybox skybox;
 
     void OnEnable()
     {
@@ -178,6 +179,7 @@ public class PlanetSwitcher : MonoBehaviour
         planet.transform.localPosition = Vector3.zero; // Reset the position
 
         planetUnlockUI.UpdateUnlockConditionsUI();
+        skybox.UpdateSkybox(index);
     }
 
     void DestroyCurrentPlanet()

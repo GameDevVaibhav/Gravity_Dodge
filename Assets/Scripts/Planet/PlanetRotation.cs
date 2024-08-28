@@ -26,7 +26,11 @@ public class PlanetRotation : MonoBehaviour
     void Update()
     {
         if (GameManager.Instance.currentState != GameState.Play)
+        {
+            ResetPlayerRotation();
             return;
+        }
+            
 
 
         HandleTouchInput();
@@ -98,6 +102,13 @@ public class PlanetRotation : MonoBehaviour
 
         // Apply the rotation to the player's z axis
         player.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    // New method to reset player rotation
+    public void ResetPlayerRotation()
+    {
+        // Reset the player's rotation to the default orientation (no rotation)
+        player.transform.rotation = Quaternion.identity;
     }
 
     public void SpeedUp()

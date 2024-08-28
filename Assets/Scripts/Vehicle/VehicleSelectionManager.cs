@@ -25,6 +25,8 @@ public class VehicleSelectionManager : MonoBehaviour
         PopulateVehicleSelectionUI();
         equipButton.onClick.AddListener(EquipSelectedVehicle);
         equipButton.interactable = false; // Disable the equip button until a vehicle is selected
+        selectedVehicleData = availableVehicles[0];
+        EquipSelectedVehicle();
     }
 
     // Load the vehicle unlock statuses from the JSON file using the DataLoader script
