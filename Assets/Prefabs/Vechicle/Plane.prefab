@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 175141654262818095}
   - component: {fileID: 3507363943026142211}
   - component: {fileID: 1286032040168170650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 11804_Airplane_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7557009234614061403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8885979945249404458}
   - component: {fileID: 6915627748109452981}
   - component: {fileID: 3313477936347419027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 11804_Airplane_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

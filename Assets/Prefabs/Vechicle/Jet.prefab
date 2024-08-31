@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9053931606355925826}
   - component: {fileID: 850028032648212311}
   - component: {fileID: 4198480724927999800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
