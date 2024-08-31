@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI finalScore;
     public TextMeshProUGUI countdownText;
     public GameObject conditionsUI;
+    public GameObject optionsButtonGroup;
 
     public Player player;
 
@@ -90,6 +91,8 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(true);
         
         conditionsUI.SetActive(true);
+
+        optionsButtonGroup.SetActive(true);
         
         gameOverUI.SetActive(false);
 
@@ -145,6 +148,7 @@ public class GameManager : MonoBehaviour
         }
         conditionsUI.SetActive(false);
         playButton.SetActive(false);
+        optionsButtonGroup.SetActive(false);
 
         StartCoroutine(PlayDelay());
         
