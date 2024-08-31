@@ -26,6 +26,7 @@ public class VehicleSelectionManager : MonoBehaviour
         equipButton.onClick.AddListener(EquipSelectedVehicle);
         equipButton.interactable = false; // Disable the equip button until a vehicle is selected
         selectedVehicleData = availableVehicles[0];
+        SelectVehicle(selectedVehicleData);
         EquipSelectedVehicle();
     }
 
@@ -52,7 +53,7 @@ public class VehicleSelectionManager : MonoBehaviour
         foreach (var vehicle in availableVehicles)
         {
             GameObject button = Instantiate(vehicleButtonPrefab, vehicleButtonHolder);
-            button.transform.GetComponent<Image>().sprite = vehicle.thumbnail;
+            button.transform.Find("Icon").GetComponent<Image>().sprite = vehicle.thumbnail;
             button.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = vehicle.vehicleName;
 
             // Add an onClick listener to select the vehicle (but not equip it yet)
