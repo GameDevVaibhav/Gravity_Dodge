@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         FindAnyObjectByType<VehicleSelectionManager>().LoadVehicleUnlockStatus();
 
         planetSwitcher.PlanetUnlockStatusUpdate();
-        planetUnlockUI.UpdateUnlockConditionsUI();
+        planetUnlockUI.UpdateConditionsContainer1();
         vehicleUnlockUI.UpdateUnlockConditionsUI();
 
 

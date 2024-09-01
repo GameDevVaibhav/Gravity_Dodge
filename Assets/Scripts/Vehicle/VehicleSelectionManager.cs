@@ -70,7 +70,7 @@ public class VehicleSelectionManager : MonoBehaviour
         equipButton.interactable = true; // Enable the equip button now that a vehicle is selected
         vehicleUnlockUI.UpdateUnlockConditionsUI();
         UIVehicle.Instance.ActivateDisplayVechicle(selectedVehicleData.prefab);
-}
+    }
 
     // Equips the selected vehicle
     private void EquipSelectedVehicle()

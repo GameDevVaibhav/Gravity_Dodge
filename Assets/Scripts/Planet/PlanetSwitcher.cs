@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlanetSwitcher : MonoBehaviour
 {
     public GameObject[] planetPrefabs; // Array to hold different planet prefabs
-    private bool[] planetUnlockedStatus;
+    public bool[] planetUnlockedStatus;
     public Transform planetContainer;  // Reference to the container for the planet
 
     public int currentPlanetIndex = 0; // To keep track of the current planet
@@ -30,7 +30,7 @@ public class PlanetSwitcher : MonoBehaviour
     {
         GameManager.OnHome -= OnHomeLoadPlanet; // Unsubscribe from OnHome event
     }
-    void Start()
+    void Awake()
     {
         // Load planet unlocked status from JSON
         planetUnlockedStatus = DataLoader.LoadPlanetUnlockedStatus(planetPrefabs.Length);
@@ -157,11 +157,7 @@ public class PlanetSwitcher : MonoBehaviour
 
     void SwitchToPreviousPlanet()
     {
-        // Destroy the current planet in the container
-        if (planetContainer.childCount > 0)
-        {
-            Destroy(planetContainer.GetChild(0).gameObject);
-        }
+        
 
         // Load the previous planet in the array
         currentPlanetIndex--;
@@ -172,13 +168,27 @@ public class PlanetSwitcher : MonoBehaviour
         LoadPlanet(currentPlanetIndex);
     }
 
-    void LoadPlanet(int index)
+    public PlanetInfo GetPlanetInfo(int index)
     {
+        if (index >= 0 && index < planetPrefabs.Length)
+        {
+            return planetPrefabs[index].GetComponent<PlanetInfo>();
+        }
+        return null;
+    }
+
+   public void LoadPlanet(int index)
+    {
+        // Destroy the current planet in the container
+        if (planetContainer.childCount > 0)
+        {
+            Destroy(planetContainer.GetChild(0).gameObject);
+        }
         // Instantiate the planet prefab and set it as a child of the planetContainer
         GameObject planet = Instantiate(planetPrefabs[index], planetContainer);
         planet.transform.localPosition = Vector3.zero; // Reset the position
 
-        planetUnlockUI.UpdateUnlockConditionsUI();
+        planetUnlockUI.UpdateConditionsContainer1();
         skybox.UpdateSkybox(index);
     }
 

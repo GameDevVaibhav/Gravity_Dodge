@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class PlanetUnlockUI : MonoBehaviour
 {
     public GameObject conditionEntryPrefab; // The prefab for displaying a condition
-    public Transform conditionsContainer; // The container for all condition entries
+    public Transform conditionsContainer1; // The container for all condition entries
+    public Transform conditionsContainer2;
 
     public PlanetUnlockCondition planetUnlockCondition;
     public PlanetSwitcher planetSwitcher;
@@ -15,10 +16,19 @@ public class PlanetUnlockUI : MonoBehaviour
     {
         // Get the PlanetUnlockCondition component
         planetUnlockCondition = FindObjectOfType<PlanetUnlockCondition>();
-        UpdateUnlockConditionsUI();
+        UpdateConditionsContainer1();
     }
 
-    public void UpdateUnlockConditionsUI()
+    public void UpdateConditionsContainer1()
+    {
+        UpdateUnlockConditionsUI(conditionsContainer1);
+    }
+    public void UpdateConditionsContainer2(int planetIndex)
+    {
+        UpdateUnlockConditionsUI(conditionsContainer2,planetIndex);
+    }
+
+    public void UpdateUnlockConditionsUI(Transform conditionsContainer,int planetIndex=-1)
     {
         // Clear existing condition entries
         foreach (Transform child in conditionsContainer)
@@ -26,8 +36,8 @@ public class PlanetUnlockUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Get the unlock conditions for the current planet
-        int currentPlanetIndex = planetSwitcher.currentPlanetIndex; // Ensure you have a method to get the current planet index
+        // Use the provided planet index or the current one from the PlanetSwitcher
+        int currentPlanetIndex = planetIndex >= 0 ? planetIndex : planetSwitcher.currentPlanetIndex;
         PlanetUnlockConditions unlockConditions = planetUnlockCondition.planetUnlockConditions[currentPlanetIndex];
 
         Dictionary<Collectible.CollectibleType, int> collectibleCounts = DataLoader.LoadCollectibleCounts();
@@ -50,15 +60,9 @@ public class PlanetUnlockUI : MonoBehaviour
             Debug.Log(currentAmount);
             progressText.text = $"{currentAmount}/{condition.requiredAmount}";
 
-            // Optionally, you could disable the prefab if the condition is met
-            //if (currentAmount >= condition.requiredAmount)
-            //{
-            //    progressText.color = Color.green; // Indicate completion
-            //}
-            //else
-            //{
-            //    progressText.color = Color.red; // Indicate remaining
-            //}
+           
         }
     }
+
+
 }
