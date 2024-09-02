@@ -70,6 +70,7 @@ public class PlanetSelectionManager : MonoBehaviour
         else
         {
             equipButtonText.text = "Locked";
+
         }
     }
 
@@ -98,6 +99,10 @@ public class PlanetSelectionManager : MonoBehaviour
             {
                 planetSwitcher.LoadPlanet(index); // Load the selected planet
                 equipButtonText.text = "Equipped"; // Update button text to "Equipped"
+            }
+            else
+            {
+                NotificationManager.Instance.ShowNotification("Locked");
             }
         }
     }

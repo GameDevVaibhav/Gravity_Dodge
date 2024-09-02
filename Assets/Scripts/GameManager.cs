@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
         // Check if the selected planet is locked
         if (planetSwitcher.IsCurrentPlanetLocked())
         {
-            Debug.Log("Planet is locked!");
+            NotificationManager.Instance.ShowNotification("Planet is Locked");
             return; // Exit the method if the planet is locked
         }
         conditionsUI.SetActive(false);
