@@ -112,9 +112,7 @@ public class GameManager : MonoBehaviour
 
     void EnterPlayState()
     {
-        // Start the game: planet rotation, object emergence, collectibles, etc.
         
-        // Enable other game mechanics
         
         scoreSystem.StartScore();
         
@@ -143,7 +141,7 @@ public class GameManager : MonoBehaviour
         // Check if the selected planet is locked
         if (planetSwitcher.IsCurrentPlanetLocked())
         {
-            NotificationManager.Instance.ShowNotification("Planet is Locked");
+            NotificationManager.Instance.ShowNotification("Planet is Locked!");
             return; // Exit the method if the planet is locked
         }
         conditionsUI.SetActive(false);
