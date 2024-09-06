@@ -1198,6 +1198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetRotation: {fileID: 0}
+  explosionVFX: {fileID: 8503586395823858439, guid: e9ffaff601f44264394d8c33c7d25d78,
+    type: 3}
+  slowMotionFactor: 0.1
+  delayBeforeGameOver: 3
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,7 +6174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &6045063304366696224
 MeshRenderer:
   m_ObjectHideFlags: 0

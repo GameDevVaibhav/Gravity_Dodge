@@ -12,6 +12,11 @@ public class FPSCount : MonoBehaviour
     private int frameCount;
     private float deltaTime;
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     void Update()
     {
         frameCount++;

@@ -10,7 +10,8 @@ public class PlanetRotation : MonoBehaviour
     public Player player;
 
 
-    private Vector3 currentRotationDirection = Vector3.zero;  // Current rotation direction
+    private Vector3 initialRotationDirection = new Vector3(1, 0, 0).normalized; // Initial rotation direction
+    private Vector3 currentRotationDirection = Vector3.zero;    // Current rotation direction
     private Vector2 touchStartPos;
     private Vector2 touchCurrentPos;
     private bool isTouching = false;
@@ -18,7 +19,7 @@ public class PlanetRotation : MonoBehaviour
     private void Start()
     {
         // Set an initial rotation direction so the planet starts rotating immediately
-        currentRotationDirection = new Vector3(1, 0, 0).normalized;
+        currentRotationDirection = initialRotationDirection;
 
         player=FindObjectOfType<Player>();
     }
@@ -109,6 +110,11 @@ public class PlanetRotation : MonoBehaviour
     {
         // Reset the player's rotation to the default orientation (no rotation)
         player.transform.rotation = Quaternion.identity;
+    }
+
+    public void ResetRotationDirection()
+    {
+        currentRotationDirection = initialRotationDirection;
     }
 
     public void SpeedUp()

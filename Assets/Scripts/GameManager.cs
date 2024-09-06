@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject optionsButtonGroup;
 
     public Player player;
+    public PlanetRotation planet;
 
     public PlanetSwitcher planetSwitcher;
     public PlanetUnlockUI planetUnlockUI;
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         scoreSystem = gameObject.GetComponent<ScoreSystem>();
 
         player=FindObjectOfType<Player>();
+        
 
         planetSwitcher = FindObjectOfType<PlanetSwitcher>();
         PlanetCount = planetSwitcher.planetPrefabs.Length;
@@ -89,7 +91,9 @@ public class GameManager : MonoBehaviour
     {
         // Enable planet switching but disable planet rotation and other interactions
         playButton.SetActive(true);
+
         
+
         conditionsUI.SetActive(true);
 
         optionsButtonGroup.SetActive(true);
@@ -199,6 +203,11 @@ public class GameManager : MonoBehaviour
 
         gameOverUI.SetActive(false);
 
+        player.ActivatePlayer();
+
+        // Reset planet rotation direction when restarting
+        FindObjectOfType<PlanetRotation>().ResetRotationDirection();
+
         StartCoroutine(PlayDelay());
     }
 
@@ -206,5 +215,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateGameState(GameState.Menu);
         OnHome?.Invoke();
+
+        player.ActivatePlayer();
     } 
 }
