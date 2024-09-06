@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -36,6 +37,13 @@ public class VehicleUnlockUI : MonoBehaviour
         {
             // Instantiate a new condition entry
             GameObject conditionEntry = Instantiate(conditionEntryPrefab, conditionsContainer);
+
+
+            // Set the initial scale to zero for "pop-in" effect
+            conditionEntry.transform.localScale = Vector3.zero;
+
+            // Animate the scale from 0 to 1 using DoTween to create a pop effect
+            conditionEntry.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);  // Customize ease and duration as needed
 
             // Get the components from the instantiated prefab
             Image collectibleImage = conditionEntry.transform.GetChild(1).GetComponent<Image>();

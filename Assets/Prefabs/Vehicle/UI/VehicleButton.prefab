@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 5090058338340470411}
   - component: {fileID: 3003995394707272843}
   - component: {fileID: 1350529773092411222}
+  - component: {fileID: -2527827320220249329}
   m_Layer: 5
   m_Name: VehicleButton
   m_TagString: Untagged
@@ -331,3 +332,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2527827320220249329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004170912809508020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a0918428decfc4a96e3e214d13e19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popDuration: 0.3
+  popStartDelay: 0.5
+  popEase: 27
+  startScale: {x: 0, y: 0, z: 0}
+  endScale: {x: 1, y: 1, z: 1}
