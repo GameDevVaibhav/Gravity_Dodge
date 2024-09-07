@@ -30,6 +30,13 @@ public class VehicleUnlockUI : MonoBehaviour
         int selectedVehicleIndex = vehicleSelectionManager.availableVehicles.IndexOf(vehicleSelectionManager.selectedVehicleData);
         if (selectedVehicleIndex < 0) return;
 
+        // Check if the vehicle is unlocked; if it is, don't instantiate the conditions
+        if (vehicleSelectionManager.vehicleUnlockStatus[selectedVehicleIndex])
+        {
+            Debug.Log("Vehicle is already unlocked, skipping condition instantiation.");
+            return;  // Exit the method if the vehicle is unlocked
+        }
+
         VehicleUnlockConditions unlockConditions = vehicleUnlockCondition.vehicleUnlockConditions[selectedVehicleIndex];
         Dictionary<Collectible.CollectibleType, int> collectibleCounts = DataLoader.LoadCollectibleCounts();
 
@@ -46,8 +53,9 @@ public class VehicleUnlockUI : MonoBehaviour
             conditionEntry.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);  // Customize ease and duration as needed
 
             // Get the components from the instantiated prefab
-            Image collectibleImage = conditionEntry.transform.GetChild(1).GetComponent<Image>();
-            TextMeshProUGUI progressText = conditionEntry.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            Image collectibleImage = conditionEntry.transform.GetChild(3).GetComponent<Image>();
+            TextMeshProUGUI progressText = conditionEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            GameObject doneTick = conditionEntry.transform.GetChild(2).gameObject;
 
             // Set the collectible sprite
             Sprite collectibleSprite = CollectibleSpriteManager.Instance.GetSpriteForType(condition.collectibleType);
@@ -55,17 +63,16 @@ public class VehicleUnlockUI : MonoBehaviour
 
             // Calculate the current amount of collected items and set the progress text
             int currentAmount = collectibleCounts.ContainsKey(condition.collectibleType) ? collectibleCounts[condition.collectibleType] : 0;
-            progressText.text = $"{currentAmount}/{condition.requiredAmount}";
+            // Cap the current amount to the required amount (if currentAmount > requiredAmount, use requiredAmount)
+            int cappedCurrentAmount = Mathf.Min(currentAmount, condition.requiredAmount);
+            progressText.text = $"{cappedCurrentAmount}/{condition.requiredAmount}";
 
-            // Optionally, you could disable the prefab if the condition is met
-            // if (currentAmount >= condition.requiredAmount)
-            // {
-            //     progressText.color = Color.green; // Indicate completion
-            // }
-            // else
-            // {
-            //     progressText.color = Color.red; // Indicate remaining
-            // }
+            if (currentAmount > condition.requiredAmount)
+            {
+                doneTick.SetActive(true);
+
+            }
+
         }
     }
 }

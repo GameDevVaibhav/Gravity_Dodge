@@ -2010,12 +2010,12 @@ MonoBehaviour:
   - unlockConditions: []
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 50
+      requiredAmount: 21
   - unlockConditions:
     - collectibleType: 0
       requiredAmount: 5
     - collectibleType: 1
-      requiredAmount: 50
+      requiredAmount: 10
 --- !u!114 &743443683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,7 +2048,7 @@ MonoBehaviour:
       requiredAmount: 0
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 13
+      requiredAmount: 5
     - collectibleType: 6
       requiredAmount: 13
 --- !u!114 &743443685

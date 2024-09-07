@@ -39,8 +39,18 @@ public class PlanetUnlockUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        
+
         // Use the provided planet index or the current one from the PlanetSwitcher
         int currentPlanetIndex = planetIndex >= 0 ? planetIndex : planetSwitcher.currentPlanetIndex;
+
+        // Check if the planet is unlocked; if it is, don't instantiate the conditions
+        if (planetSwitcher.planetUnlockedStatus[currentPlanetIndex])
+        {
+            Debug.Log("Planet is already unlocked, skipping condition instantiation.");
+            return;  // Exit the method if the planet is unlocked
+        }
+
         PlanetUnlockConditions unlockConditions = planetUnlockCondition.planetUnlockConditions[currentPlanetIndex];
 
         Dictionary<Collectible.CollectibleType, int> collectibleCounts = DataLoader.LoadCollectibleCounts();
@@ -51,6 +61,8 @@ public class PlanetUnlockUI : MonoBehaviour
 
         foreach (UnlockCondition condition in unlockConditions.unlockConditions)
         {
+
+
             // Instantiate a new condition entry
             GameObject conditionEntry = Instantiate(conditionEntryPrefab, conditionsContainer);
 
@@ -61,8 +73,9 @@ public class PlanetUnlockUI : MonoBehaviour
             conditionEntry.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);  // Customize ease and duration as needed
 
             // Get the components from the instantiated prefab
-            Image collectibleImage = conditionEntry.transform.GetChild(1).GetComponent<Image>();
-            TextMeshProUGUI progressText = conditionEntry.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            Image collectibleImage = conditionEntry.transform.GetChild(3).GetComponent<Image>();
+            TextMeshProUGUI progressText = conditionEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            GameObject doneTick=conditionEntry.transform.GetChild(2).gameObject;
 
             // Set the collectible sprite
             Sprite collectibleSprite = CollectibleSpriteManager.Instance.GetSpriteForType(condition.collectibleType);
@@ -70,11 +83,19 @@ public class PlanetUnlockUI : MonoBehaviour
 
             // Calculate the current amount of collected items and set the progress text
             int currentAmount = collectibleCounts.ContainsKey(condition.collectibleType) ? collectibleCounts[condition.collectibleType] : 0;
-            progressText.text = $"{currentAmount}/{condition.requiredAmount}";
+            // Cap the current amount to the required amount (if currentAmount > requiredAmount, use requiredAmount)
+            int cappedCurrentAmount = Mathf.Min(currentAmount, condition.requiredAmount);
+            progressText.text = $"{cappedCurrentAmount}/{condition.requiredAmount}";
+
+            if (currentAmount>condition.requiredAmount)
+            {
+                doneTick.SetActive(true);
+                
+            }
 
             // Add the required and current amounts to the totals for overall progress tracking
             totalRequiredAmount += condition.requiredAmount;
-            totalCurrentAmount += currentAmount;
+            totalCurrentAmount += cappedCurrentAmount;
         }
 
         // Calculate the overall progress percentage
