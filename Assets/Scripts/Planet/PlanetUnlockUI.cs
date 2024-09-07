@@ -12,6 +12,7 @@ public class PlanetUnlockUI : MonoBehaviour
 
     public PlanetUnlockCondition planetUnlockCondition;
     public PlanetSwitcher planetSwitcher;
+    public TextMeshProUGUI overallProgressText;  // Text to display the overall progress percentage
 
     private void Start()
     {
@@ -24,12 +25,13 @@ public class PlanetUnlockUI : MonoBehaviour
     {
         UpdateUnlockConditionsUI(conditionsContainer1);
     }
+
     public void UpdateConditionsContainer2(int planetIndex)
     {
-        UpdateUnlockConditionsUI(conditionsContainer2,planetIndex);
+        UpdateUnlockConditionsUI(conditionsContainer2, planetIndex);
     }
 
-    public void UpdateUnlockConditionsUI(Transform conditionsContainer,int planetIndex=-1)
+    public void UpdateUnlockConditionsUI(Transform conditionsContainer, int planetIndex = -1)
     {
         // Clear existing condition entries
         foreach (Transform child in conditionsContainer)
@@ -42,6 +44,10 @@ public class PlanetUnlockUI : MonoBehaviour
         PlanetUnlockConditions unlockConditions = planetUnlockCondition.planetUnlockConditions[currentPlanetIndex];
 
         Dictionary<Collectible.CollectibleType, int> collectibleCounts = DataLoader.LoadCollectibleCounts();
+
+        // Variables to keep track of overall progress
+        int totalRequiredAmount = 0;
+        int totalCurrentAmount = 0;
 
         foreach (UnlockCondition condition in unlockConditions.unlockConditions)
         {
@@ -64,12 +70,22 @@ public class PlanetUnlockUI : MonoBehaviour
 
             // Calculate the current amount of collected items and set the progress text
             int currentAmount = collectibleCounts.ContainsKey(condition.collectibleType) ? collectibleCounts[condition.collectibleType] : 0;
-            Debug.Log(currentAmount);
             progressText.text = $"{currentAmount}/{condition.requiredAmount}";
 
-           
+            // Add the required and current amounts to the totals for overall progress tracking
+            totalRequiredAmount += condition.requiredAmount;
+            totalCurrentAmount += currentAmount;
+        }
+
+        // Calculate the overall progress percentage
+        float overallProgress = (float)totalCurrentAmount / totalRequiredAmount * 100;
+
+        LockCover lockCover=FindObjectOfType<LockCover>();
+        // Call the LockCover script to update the shader property based on the progress percentage
+        if (lockCover != null)
+        {
+            Debug.Log("progress: " + overallProgress);
+            lockCover.UpdateCoverProgress(overallProgress);
         }
     }
-
-
 }

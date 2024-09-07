@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 363429238}
   - component: {fileID: 363429242}
   - component: {fileID: 363429243}
+  - component: {fileID: 363429244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1189,6 +1190,25 @@ MonoBehaviour:
     type: 3}
   slowMotionFactor: 0.1
   delayBeforeGameOver: 3
+--- !u!114 &363429244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363429236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a0918428decfc4a96e3e214d13e19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popDuration: 0.3
+  popStartDelay: 0.5
+  popEase: 27
+  reverseEase: 26
+  startScale: {x: 0, y: 0, z: 0}
+  endScale: {x: 1, y: 1, z: 1}
+  reversePopDuration: 0.2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1722,7 @@ GameObject:
   - component: {fileID: 623871108}
   - component: {fileID: 623871111}
   - component: {fileID: 623871110}
+  - component: {fileID: 623871112}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1767,6 +1788,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623871107}
   m_CullTransparentMesh: 1
+--- !u!114 &623871112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623871107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a0918428decfc4a96e3e214d13e19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popDuration: 0.3
+  popStartDelay: 0.5
+  popEase: 27
+  reverseEase: 26
+  startScale: {x: 0, y: 0, z: 0}
+  endScale: {x: 1, y: 1, z: 1}
+  reversePopDuration: 0.3
 --- !u!1 &694092076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,7 +2005,7 @@ MonoBehaviour:
   - unlockConditions: []
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 5
+      requiredAmount: 50
   - unlockConditions:
     - collectibleType: 0
       requiredAmount: 5
@@ -3325,6 +3365,7 @@ MonoBehaviour:
   conditionsContainer2: {fileID: 1617328869}
   planetUnlockCondition: {fileID: 743443682}
   planetSwitcher: {fileID: 1836231923}
+  overallProgressText: {fileID: 0}
 --- !u!114 &1223446456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,6 +5798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1836231922}
   - component: {fileID: 1836231923}
+  - component: {fileID: 1836231924}
   m_Layer: 0
   m_Name: Planet Holder
   m_TagString: Untagged
@@ -5801,6 +5843,25 @@ MonoBehaviour:
   graphicRaycaster: {fileID: 1223446451}
   planetUnlockUI: {fileID: 1223446455}
   skybox: {fileID: 330585550}
+--- !u!114 &1836231924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836231921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a0918428decfc4a96e3e214d13e19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popDuration: 0.3
+  popStartDelay: 0
+  popEase: 27
+  reverseEase: 26
+  startScale: {x: 0.5, y: 0.5, z: 0.5}
+  endScale: {x: 1, y: 1, z: 1}
+  reversePopDuration: 0.2
 --- !u!1 &1857314976
 GameObject:
   m_ObjectHideFlags: 0

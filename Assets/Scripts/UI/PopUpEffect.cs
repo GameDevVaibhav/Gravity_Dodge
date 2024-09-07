@@ -6,8 +6,10 @@ public class PopUpEffect : MonoBehaviour
     public float popDuration = 0.3f;  // Duration for the pop effect
     public float popStartDelay = 0.5f;  // Delay before the pop effect starts
     public Ease popEase = Ease.OutBack;  // Easing type for the pop effect
+    public Ease reverseEase = Ease.InBack;  // Easing type for the reverse pop effect
     public Vector3 startScale = Vector3.zero;  // Initial scale for the pop effect
     public Vector3 endScale = Vector3.one;  // Final scale for the pop effect
+    public float reversePopDuration = 0.2f;  // Duration for the reverse pop effect
 
     private void OnEnable()
     {
@@ -18,5 +20,13 @@ public class PopUpEffect : MonoBehaviour
         transform.DOScale(endScale, popDuration)
             .SetDelay(popStartDelay)  // Add the delay before starting the pop effect
             .SetEase(popEase);  // Set the easing effect
+    }
+
+    public void PopIn()
+    {
+        // Animate the scale back to zero
+        transform.DOScale(Vector3.zero, reversePopDuration)
+            .SetEase(reverseEase)  // Set the easing effect for reverse animation
+            .OnComplete(() => gameObject.SetActive(false));
     }
 }

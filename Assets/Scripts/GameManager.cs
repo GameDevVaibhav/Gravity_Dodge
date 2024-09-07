@@ -149,7 +149,8 @@ public class GameManager : MonoBehaviour
             return; // Exit the method if the planet is locked
         }
         conditionsUI.SetActive(false);
-        playButton.SetActive(false);
+        playButton.GetComponent<PopUpEffect>().PopIn();
+        //playButton.SetActive(false);
         optionsButtonGroup.SetActive(false);
 
         StartCoroutine(PlayDelay());
