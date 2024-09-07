@@ -61,16 +61,33 @@ public class PlanetSelectionManager : MonoBehaviour
             if (planetSwitcher.currentPlanetIndex == index)
             {
                 equipButtonText.text = "Equipped";
+                SetButtonColor("#7B7974");
             }
             else
             {
                 equipButtonText.text = "Equip";
+                SetButtonColor("#FFD407");
             }
         }
         else
         {
             equipButtonText.text = "Locked";
+            SetButtonColor("red");
+        }
+    }
 
+    private void SetButtonColor(string colorCode)
+    {
+        // Parse the hex color code and set the button color
+        Color color;
+        if (ColorUtility.TryParseHtmlString(colorCode, out color))
+        {
+            Image buttonImage = equipButton.GetComponent<Image>();
+
+            if (buttonImage != null)
+            {
+                buttonImage.color = color;  // Set the button's background color
+            }
         }
     }
 

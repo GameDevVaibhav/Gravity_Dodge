@@ -11,11 +11,13 @@ public class VehicleSelectionManager : MonoBehaviour
     public Image selectedVehicleThumbnail; // UI Image to show the vehicle's thumbnail when selected
     public TextMeshProUGUI selectedVehicleName; // UI Text to show the vehicle's name when selected
     public Button equipButton; // Assign the Equip button in the inspector
+    public TextMeshProUGUI equipButtonText; // Reference to the equip button's text
     public List<VehicleData> availableVehicles; // List of available vehicles as ScriptableObjects
 
     public bool[] vehicleUnlockStatus; // Array to track which vehicles are unlocked (true = unlocked, false = locked)
     private GameObject currentVehicle; // The currently equipped vehicle
     public VehicleData selectedVehicleData; // The vehicle data of the currently selected vehicle
+    private VehicleData currentEquippedVehicle;
     public VehicleUnlockUI vehicleUnlockUI;
 
 
@@ -24,8 +26,9 @@ public class VehicleSelectionManager : MonoBehaviour
         LoadVehicleUnlockStatus();
         PopulateVehicleSelectionUI();
         equipButton.onClick.AddListener(EquipSelectedVehicle);
-        equipButton.interactable = false; // Disable the equip button until a vehicle is selected
+       
         selectedVehicleData = availableVehicles[0];
+        currentEquippedVehicle = selectedVehicleData;
         SelectVehicle(selectedVehicleData);
         EquipSelectedVehicle();
     }
@@ -61,37 +64,81 @@ public class VehicleSelectionManager : MonoBehaviour
         }
     }
 
-    // Selects a vehicle to be shown in the UI
     public void SelectVehicle(VehicleData vehicle)
     {
         selectedVehicleData = vehicle;
         selectedVehicleThumbnail.sprite = vehicle.thumbnail;
         selectedVehicleName.text = vehicle.vehicleName;
-        equipButton.interactable = true; // Enable the equip button now that a vehicle is selected
-        vehicleUnlockUI.UpdateUnlockConditionsUI();
-        UIVehicle.Instance.ActivateDisplayVechicle(selectedVehicleData.prefab);
+
+        // Check vehicle lock status and update equip button text
+        int vehicleIndex = availableVehicles.IndexOf(vehicle);
+        if (vehicleUnlockStatus[vehicleIndex])
+        {
+            if (currentEquippedVehicle == selectedVehicleData) // Vehicle is already equipped
+            {
+                equipButtonText.text = "Equipped";
+                SetButtonColor("#7B7974");
+            }
+            else
+            {
+                equipButtonText.text = "Equip";
+                SetButtonColor("#FFD407");
+                
+            }
+        }
+        else
+        {
+            equipButtonText.text = "Locked";
+            SetButtonColor("red");
+        }
+
+        //equipButton.interactable = vehicleUnlockStatus[vehicleIndex];  // Enable button if unlocked
+        vehicleUnlockUI.UpdateUnlockConditionsUI();  // Update the unlock conditions UI
+        UIVehicle.Instance.ActivateDisplayVechicle(selectedVehicleData.prefab);  // Show vehicle in display
+    }
+
+    private void SetButtonColor(string colorCode)
+    {
+        // Parse the hex color code and set the button color
+        Color color;
+        if (ColorUtility.TryParseHtmlString(colorCode, out color))
+        {
+            Image buttonImage = equipButton.GetComponent<Image>();
+
+            if (buttonImage != null)
+            {
+                buttonImage.color = color;  // Set the button's background color
+            }
+        }
     }
 
     // Equips the selected vehicle
-    private void EquipSelectedVehicle()
+    public void EquipSelectedVehicle()
     {
         if (selectedVehicleData != null)
         {
             int vehicleIndex = availableVehicles.IndexOf(selectedVehicleData);
 
+            // Check if the vehicle is unlocked
             if (vehicleIndex >= 0 && vehicleIndex < vehicleUnlockStatus.Length && vehicleUnlockStatus[vehicleIndex])
             {
+                // Destroy the currently equipped vehicle if any
                 if (currentVehicle != null)
                 {
-                    Destroy(currentVehicle); // Destroy the current vehicle
+                    Destroy(currentVehicle);
                 }
 
                 // Instantiate the new vehicle as a child of the player object
                 currentVehicle = Instantiate(selectedVehicleData.prefab, playerObject.transform);
-                currentVehicle.transform.localPosition = Vector3.zero; // Adjust position if necessary
+                currentVehicle.transform.localPosition = Vector3.zero;  // Adjust position if necessary
 
-                // Optionally, disable the equip button after equipping
-                equipButton.interactable = false;
+                // Update the currently equipped vehicle
+                currentEquippedVehicle = selectedVehicleData;
+
+                // Update the equip button text to show that the vehicle is equipped
+                equipButtonText.text = "Equipped";
+
+                
             }
             else
             {
