@@ -24,6 +24,7 @@ public class PopUpEffect : MonoBehaviour
 
     public void PopIn()
     {
+        transform.DOKill();
         // Animate the scale back to zero
         transform.DOScale(Vector3.zero, reversePopDuration)
             .SetEase(reverseEase)  // Set the easing effect for reverse animation

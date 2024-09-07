@@ -332,6 +332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff12e0bdb8cd449a088af834f16cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentContainer: {fileID: 623871108}
+  stretchDuration: 0.2
+  squashFactor: 0.5
+  stretchFactor: 1.2
+  bounceCount: 5
 --- !u!1 &22962187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,7 +1745,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 19325034}
   m_Father: {fileID: 1223446454}
