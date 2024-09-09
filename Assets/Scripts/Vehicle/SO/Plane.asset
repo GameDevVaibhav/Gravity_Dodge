@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e88113d94cfee4186857d13d711bdc, type: 3}
+  m_Name: Plane
+  m_EditorClassIdentifier: 
+  vehicleName: Plane
+  thumbnail: {fileID: 21300000, guid: addae06a873d0a54299d7203381669b7, type: 3}
+  prefab: {fileID: 8104713569475324913, guid: e6536f0add9f6994d93a36260bb46519, type: 3}
