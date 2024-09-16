@@ -19,7 +19,7 @@ public class ObjectEmergenceManager : MonoBehaviour
     private float[] pauseStartTime;           // Track the start time of the pause for each object
     private GameObject[] set1Objects;         // Array to store the first set of objects for emergence
     private GameObject[] set2Objects;         // Array to store the second set of objects for standby
-    private GameObject[] vfxInstances;
+    
 
     void OnEnable()
     {
@@ -33,8 +33,7 @@ public class ObjectEmergenceManager : MonoBehaviour
 
     void Start()
     {
-        // Initialize the vfxInstances array to match the size of objectsToOscillate
-        vfxInstances = new GameObject[objectsToOscillate.Length];
+        
 
         InitializeOriginalInitialState();
         InitializePositionsAndStatus();
@@ -156,7 +155,8 @@ public class ObjectEmergenceManager : MonoBehaviour
             
             if (movingOutward[objIndex])
             {
-                
+                // **Enable the child object when starting movement outward**
+            selectedObject.transform.GetChild(2).gameObject.SetActive(true);
                
                 // Move the object outward (from initial position to target position)
                 selectedObject.transform.localPosition = Vector3.MoveTowards(
