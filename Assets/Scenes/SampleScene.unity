@@ -2017,6 +2017,7 @@ MonoBehaviour:
       requiredAmount: 5
     - collectibleType: 1
       requiredAmount: 10
+  - unlockConditions: []
 --- !u!114 &743443683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5843,6 +5844,7 @@ MonoBehaviour:
   - {fileID: 2659577167405011120, guid: 0ead017210f6bb84da82a33db7e6f45b, type: 3}
   - {fileID: 2659577167405011120, guid: 3ec580ba1a133bc4cbcd7abf398dc6d8, type: 3}
   - {fileID: 2659577167405011120, guid: 3ffd92bd517a2e0478ce293d5f8ccc6e, type: 3}
+  - {fileID: 2659577167405011120, guid: 521126fbe85c05040a34632ae4deb169, type: 3}
   planetUnlockedStatus: 
   planetContainer: {fileID: 1836231922}
   currentPlanetIndex: 0
