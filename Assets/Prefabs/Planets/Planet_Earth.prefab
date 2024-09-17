@@ -234,7 +234,7 @@ MonoBehaviour:
   speedupPrefab: {fileID: 3217273850045230113, guid: 711850b9d4b95434c887b2854fd907a4,
     type: 3}
   planetCenter: {fileID: 9192934070312043593}
-  spawnRadius: 5
+  spawnRadius: 5.5
   initialCollectibleCount: 3
   maxCollectibles: 3
 --- !u!1 &7555872245495315933

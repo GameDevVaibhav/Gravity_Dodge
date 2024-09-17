@@ -1,31 +1,31 @@
-//using UnityEditor;
-//using UnityEngine;
+using UnityEditor;
+using UnityEngine;
 
-//[CustomEditor(typeof(AlignToPlanet))]
-//public class AlignToPlanetEditor : Editor
-//{
-//    public override void OnInspectorGUI()
-//    {
-//        DrawDefaultInspector();
+[CustomEditor(typeof(AlignToPlanet))]
+public class AlignToPlanetEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
 
-//        AlignToPlanet script = (AlignToPlanet)target;
+        AlignToPlanet script = (AlignToPlanet)target;
 
-//        // Button to align and position objects
-//        if (GUILayout.Button("Align and Position Objects"))
-//        {
-//            script.AlignAndPositionObjects();
-//        }
+        // Button to align and position objects
+        if (GUILayout.Button("Align and Position Objects"))
+        {
+            script.AlignAndPositionObjects();
+        }
 
-//        // Button to randomly distribute objects on the planet's surface
-//        if (GUILayout.Button("Randomly Distribute Objects"))
-//        {
-//            script.DistributeObjectsRandomly();
-//        }
+        // Button to randomly distribute objects on the planet's surface
+        if (GUILayout.Button("Randomly Distribute Objects"))
+        {
+            script.DistributeObjectsRandomly();
+        }
 
-//        // Button to equally distribute objects on the planet's surface
-//        if (GUILayout.Button("Equally Distribute Objects"))
-//        {
-//            script.DistributeObjectsEqually();
-//        }
-//    }
-//}
+        // Button to equally distribute objects on the planet's surface
+        if (GUILayout.Button("Equally Distribute Objects"))
+        {
+            script.DistributeObjectsEqually();
+        }
+    }
+}
