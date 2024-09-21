@@ -94,20 +94,53 @@ public class DataLoader
     // Load planet unlocked status from file
     public static bool[] LoadPlanetUnlockedStatus(int planetCount)
     {
+        // Check if the JSON file exists
         if (File.Exists(planetUnlockFilePath))
         {
             string json = File.ReadAllText(planetUnlockFilePath);
             PlanetUnlockData data = JsonUtility.FromJson<PlanetUnlockData>(json);
+
+            // If the planet count in the JSON file is less than the current planet count, update the file
+            if (data.planetUnlockedStatus.Length < planetCount)
+            {
+                bool[] updatedStatus = UpdatePlanetUnlockStatus(data.planetUnlockedStatus, planetCount);
+                SavePlanetUnlockedStatus(updatedStatus);
+                return updatedStatus;
+            }
 
             Debug.Log("Planet unlock status loaded from " + planetUnlockFilePath);
             return data.planetUnlockedStatus;
         }
         else
         {
+            // Create a new file with the default planet unlock status if it doesn't exist
             CreatePlanetUnlockedStatusFile(planetCount);
             return InitializeDefaultPlanetUnlockStatus(planetCount);
         }
     }
+
+    // Method to update the planet unlock status array with new planets set to default (locked)
+    private static bool[] UpdatePlanetUnlockStatus(bool[] existingStatus, int planetCount)
+    {
+        // Create a new array with the updated planet count
+        bool[] updatedStatus = new bool[planetCount];
+
+        // Copy existing unlock status values
+        for (int i = 0; i < existingStatus.Length; i++)
+        {
+            updatedStatus[i] = existingStatus[i];
+        }
+
+        // Set the new planets as locked (false)
+        for (int i = existingStatus.Length; i < planetCount; i++)
+        {
+            updatedStatus[i] = false;
+        }
+
+        Debug.Log("Updated planet unlock status with new planets.");
+        return updatedStatus;
+    }
+
 
     private static bool[] InitializeDefaultPlanetUnlockStatus(int planetCount)
     {
