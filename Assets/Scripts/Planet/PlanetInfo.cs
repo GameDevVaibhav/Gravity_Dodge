@@ -8,4 +8,5 @@ public class PlanetInfo : MonoBehaviour
     public string obstacleName;        // Name of the obstacle on the planet
     public Sprite planetSprite;        // Sprite representing the planet
     public Sprite obstacleSprite;      // Sprite representing the obstacle
+    public Sprite collectibleSprite;
 }

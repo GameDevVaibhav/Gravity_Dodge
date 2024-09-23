@@ -2612,8 +2612,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Lava
   obstacleName: Fire
-  planetSprite: {fileID: 21300000, guid: 202367d027329f24faf8adc07451bf54, type: 3}
-  obstacleSprite: {fileID: 21300000, guid: b92112f71328efd40b9735d75982b45f, type: 3}
+  planetSprite: {fileID: 21300000, guid: 53ac661833f3dab4d9e2049b71e2e30e, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 3b22768d0582a8349853f600d6da39b9, type: 3}
+  collectibleSprite: {fileID: 21300000, guid: 55554964d28fb5d4693f5e7cf8cb4193, type: 3}
 --- !u!1 &2726047330717976511
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleSprites:
   - type: 0
-    sprite: {fileID: 21300000, guid: 9ca01e690a528624c96c26011345d54e, type: 3}
+    sprite: {fileID: 21300000, guid: 409be7a93824b734d8f53fede89ce39f, type: 3}
   - type: 1
-    sprite: {fileID: 21300000, guid: 7ca72c3fa01107148978e66cf54d3eb0, type: 3}
+    sprite: {fileID: 21300000, guid: ace05af9ff4642641b8dd4d18ca718c2, type: 3}
   - type: 2
-    sprite: {fileID: 21300000, guid: ce93710a96a9ca34db56494de3099ac7, type: 3}
+    sprite: {fileID: 21300000, guid: b92112f71328efd40b9735d75982b45f, type: 3}
   - type: 3
-    sprite: {fileID: 21300000, guid: 0bd1a71ddc3616942ae511139cce40db, type: 3}
+    sprite: {fileID: 21300000, guid: d3e01828005144045ac2236289f36d45, type: 3}
   - type: 4
-    sprite: {fileID: 21300000, guid: 5f97d99ccf236a744be35c01d1b55c91, type: 3}
+    sprite: {fileID: 21300000, guid: 7c921c6e0538f4243ba0118121bd5f0d, type: 3}
   - type: 5
-    sprite: {fileID: 21300000, guid: e3cf56c66819bfe448e1f866a50f6832, type: 3}
+    sprite: {fileID: 21300000, guid: 854178c791ecfe348a01d16c58defad3, type: 3}
   - type: 6
-    sprite: {fileID: 21300000, guid: af7a8c65eb734e340a8213d5b038612b, type: 3}
+    sprite: {fileID: 21300000, guid: 0fd00113bd17dd94bae5f1b8df5b5982, type: 3}
+  - type: 7
+    sprite: {fileID: 21300000, guid: e81e305a5faeba040b2ee8fec900353b, type: 3}

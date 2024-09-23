@@ -25,9 +25,9 @@ Transform:
   m_GameObject: {fileID: 2076345734308791412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 26.599998, y: 26.599998, z: 26.599998}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: -0.47, z: -0.006}
+  m_LocalScale: {x: 25, y: 26, z: 25}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8189392485884593411}
   - {fileID: 5267807969242783312}
@@ -174,8 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Ice
   obstacleName: Spikes
-  planetSprite: {fileID: 21300000, guid: 04e1ffd80147215458c2223d85f659e9, type: 3}
-  obstacleSprite: {fileID: 21300000, guid: a7cb5ace21b44e643a40ce1cdb88fdd0, type: 3}
+  planetSprite: {fileID: 21300000, guid: ba6dbde90bae7264a8f4f9d591b3ba50, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: db6a68df0dde8854485b24ed15cca392, type: 3}
+  collectibleSprite: {fileID: 21300000, guid: e81e305a5faeba040b2ee8fec900353b, type: 3}
 --- !u!1 &5387744661790084145
 GameObject:
   m_ObjectHideFlags: 0

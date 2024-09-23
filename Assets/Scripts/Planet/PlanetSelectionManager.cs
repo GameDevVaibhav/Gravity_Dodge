@@ -14,6 +14,7 @@ public class PlanetSelectionManager : MonoBehaviour
     public TextMeshProUGUI ObstacleName; // UI element to display the planet description
     public TextMeshProUGUI selectedPlanetIcon;
     public Image ObstacleIcon;
+    public Image CollectibleIcon;
     public Button equipButton;
     public TextMeshProUGUI equipButtonText; // Reference to the equip button's text
 
@@ -99,6 +100,7 @@ public class PlanetSelectionManager : MonoBehaviour
             selectedPlanetName.text = selectedPlanetInfo.planetName;
             ObstacleName.text = selectedPlanetInfo.obstacleName;
             ObstacleIcon.sprite = selectedPlanetInfo.obstacleSprite;
+            CollectibleIcon.sprite = selectedPlanetInfo.collectibleSprite;
 
             planetUnlockUI.UpdateConditionsContainer2(index);
         }

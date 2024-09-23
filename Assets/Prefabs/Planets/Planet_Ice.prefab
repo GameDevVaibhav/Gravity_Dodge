@@ -2574,8 +2574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Ice
   obstacleName: Spikes
-  planetSprite: {fileID: 21300000, guid: 04e1ffd80147215458c2223d85f659e9, type: 3}
-  obstacleSprite: {fileID: 21300000, guid: a7cb5ace21b44e643a40ce1cdb88fdd0, type: 3}
+  planetSprite: {fileID: 21300000, guid: 4f80bc48b05d4234d9acb691b5c684cb, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: e843e7222e7d59f4c981d6e509b922bc, type: 3}
+  collectibleSprite: {fileID: 21300000, guid: ace05af9ff4642641b8dd4d18ca718c2, type: 3}
 --- !u!1 &2764155973812300229
 GameObject:
   m_ObjectHideFlags: 0

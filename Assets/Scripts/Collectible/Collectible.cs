@@ -5,12 +5,13 @@ public class Collectible : MonoBehaviour
     public enum CollectibleType
     {
         Leaf,
-        IceCrystal,
-        LavaCrystal,
-        Skull,
-        Pearl,
-        Bubble,
-        BlackCrystal
+        SnowFlake,
+        Flames,
+        Drop,
+        Helmet,
+        BlueEther,
+        GoldenGrid,
+        Candy
     }
 
     public CollectibleType collectibleType; // Assign this in the Inspector
