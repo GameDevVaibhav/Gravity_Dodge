@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 674554282177569980}
   - component: {fileID: 4536149702556953369}
   - component: {fileID: 1808005409059266515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tidal Raptor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6395368882176929867}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6395368882176929867}
   - component: {fileID: 2781675739750351282}
   - component: {fileID: 8405235663371641702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Air Plane Zf_9 Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

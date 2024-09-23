@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8383548788536130237}
   - component: {fileID: 3494858397939465720}
   - component: {fileID: 476150429375214573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Truck.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4792577994391891945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Space Rover
   m_TagString: Untagged
   m_Icon: {fileID: 0}

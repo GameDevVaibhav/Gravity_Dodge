@@ -181,15 +181,42 @@ public class DataLoader
             string json = File.ReadAllText(vehicleUnlockFilePath);
             VehicleUnlockData data = JsonUtility.FromJson<VehicleUnlockData>(json);
 
-            Debug.Log("Vehicle unlock status loaded from " + vehicleUnlockFilePath);
-            return data.vehicleUnlockedStatus;
+            // Check if the vehicle count has increased since the last save
+            if (data.vehicleUnlockedStatus.Length < vehicleCount)
+            {
+                // Create a new array with the updated vehicle count
+                bool[] updatedStatus = new bool[vehicleCount];
+                // Copy the existing unlock status values to the new array
+                for (int i = 0; i < data.vehicleUnlockedStatus.Length; i++)
+                {
+                    updatedStatus[i] = data.vehicleUnlockedStatus[i];
+                }
+                // Set the default status (locked) for the new vehicles
+                for (int i = data.vehicleUnlockedStatus.Length; i < vehicleCount; i++)
+                {
+                    updatedStatus[i] = false; // Lock the newly added vehicles by default
+                }
+
+                // Save the updated status to the file
+                SaveVehicleUnlockedStatus(updatedStatus);
+                Debug.Log("Vehicle unlock status updated with new vehicles.");
+
+                return updatedStatus;
+            }
+            else
+            {
+                Debug.Log("Vehicle unlock status loaded from " + vehicleUnlockFilePath);
+                return data.vehicleUnlockedStatus;
+            }
         }
         else
         {
+            // If the file doesn't exist, create a new one with the default status
             CreateVehicleUnlockedStatusFile(vehicleCount);
             return InitializeDefaultVehicleUnlockStatus(vehicleCount);
         }
     }
+
 
     private static bool[] InitializeDefaultVehicleUnlockStatus(int vehicleCount)
     {

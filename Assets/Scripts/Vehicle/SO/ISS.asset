@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e88113d94cfee4186857d13d711bdc, type: 3}
+  m_Name: ISS
+  m_EditorClassIdentifier: 
+  vehicleName: ISS
+  thumbnail: {fileID: 21300000, guid: 0dbb2c3e962518f4d990cd4aa6a7d400, type: 3}
+  prefab: {fileID: 3805730484688277738, guid: fa53ffa01c6b74c43a0fda16b744edd7, type: 3}

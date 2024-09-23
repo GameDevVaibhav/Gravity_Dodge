@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5921765111881315627}
   - component: {fileID: 1184991778345472489}
   - component: {fileID: 8830121632799791226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Air Plane Zb_3 Tireb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5398780633954092274}
   - component: {fileID: 6776560012505615723}
   - component: {fileID: 2069944916677193373}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Air Plane Zb_3 Tiref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3420246056892656205}
   - component: {fileID: 1790458202203842024}
   - component: {fileID: 4556529525728186658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sky Prowler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3233303370286733118}
   - component: {fileID: 6036758628108653440}
   - component: {fileID: 8647217329857455904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Air Plane Zb_3 Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

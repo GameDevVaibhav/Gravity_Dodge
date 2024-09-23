@@ -73,7 +73,7 @@ public class PlanetUnlockUI : MonoBehaviour
             conditionEntry.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);  // Customize ease and duration as needed
 
             // Get the components from the instantiated prefab
-            Image collectibleImage = conditionEntry.transform.GetChild(3).GetComponent<Image>();
+            Image collectibleImage = conditionEntry.transform.GetChild(4).GetComponent<Image>();
             TextMeshProUGUI progressText = conditionEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             GameObject doneTick=conditionEntry.transform.GetChild(2).gameObject;
 

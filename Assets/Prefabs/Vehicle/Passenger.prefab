@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4879302830322997213}
-  m_Layer: 0
-  m_Name: Air Plane 4
+  m_Layer: 7
+  m_Name: Passenger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,10 +95,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 6239064974306ab4abc25b53bb31f4a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 6239064974306ab4abc25b53bb31f4a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6239064974306ab4abc25b53bb31f4a5,
         type: 3}
       propertyPath: m_Name
       value: Airplane
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6239064974306ab4abc25b53bb31f4a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 6239064974306ab4abc25b53bb31f4a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

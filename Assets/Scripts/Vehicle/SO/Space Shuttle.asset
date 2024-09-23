@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7e88113d94cfee4186857d13d711bdc, type: 3}
-  m_Name: Plane
+  m_Name: Space Shuttle
   m_EditorClassIdentifier: 
-  vehicleName: Plane
-  thumbnail: {fileID: 21300000, guid: addae06a873d0a54299d7203381669b7, type: 3}
-  prefab: {fileID: 8104713569475324913, guid: e6536f0add9f6994d93a36260bb46519, type: 3}
+  vehicleName: Space Shuttle
+  thumbnail: {fileID: 21300000, guid: 0cc4ec68e8cfacf4485e87d02dea3803, type: 3}
+  prefab: {fileID: 603235868135866154, guid: 7ecf4e2f4cc59a945be176d7ad928dd6, type: 3}

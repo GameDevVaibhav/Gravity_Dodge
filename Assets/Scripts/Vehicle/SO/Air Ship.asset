@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7e88113d94cfee4186857d13d711bdc, type: 3}
-  m_Name: Jet
+  m_Name: Air Ship
   m_EditorClassIdentifier: 
-  vehicleName: Jet
-  thumbnail: {fileID: 21300000, guid: 5075b49614867a04386e16b46f087e22, type: 3}
-  prefab: {fileID: 3280384310271628014, guid: 871ec326cd83ebb46b99b01bf9237e1e, type: 3}
+  vehicleName: Air Ship
+  thumbnail: {fileID: 21300000, guid: 7d1cae3a9ce0f0340ac2c99e4df3e010, type: 3}
+  prefab: {fileID: 4926404084269949556, guid: 75e78826af3ca3c48a84299ce4bca263, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1546095401841928819}
   - component: {fileID: 7293168798716989124}
   - component: {fileID: 749723694609509687}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StarDestroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205166783351900824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Star Destroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
