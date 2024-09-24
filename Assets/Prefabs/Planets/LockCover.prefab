@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4834579151652922913}
   - component: {fileID: 6391654491180095835}
   - component: {fileID: 8174764910050538950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LockCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}

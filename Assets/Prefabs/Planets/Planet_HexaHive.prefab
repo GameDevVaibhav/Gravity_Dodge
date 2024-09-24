@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4188922393043644793}
   - component: {fileID: 8870435432580934900}
   - component: {fileID: -4216895978077843545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Planet_HexaHive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5113181617599510585}
   - component: {fileID: 2787927921103730301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collectables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 4024488902425429297}
   - component: {fileID: 8025321342159666820}
   - component: {fileID: 7364473200463455457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Planet_HexaHive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 7186329811724945836}
   - component: {fileID: 2632819995629679439}
   - component: {fileID: 2899648202958702574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,10 +523,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -603,10 +633,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -683,10 +743,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -763,10 +853,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -843,10 +963,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -923,10 +1073,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1003,10 +1183,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1083,10 +1293,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1163,10 +1403,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1243,10 +1513,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1323,10 +1623,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1403,10 +1733,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1483,10 +1843,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1563,10 +1953,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1643,10 +2063,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1723,10 +2173,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1803,10 +2283,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1883,10 +2393,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1963,10 +2503,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2043,10 +2613,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2123,10 +2723,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2203,10 +2833,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2283,10 +2943,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2363,10 +3053,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2443,10 +3163,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2523,10 +3273,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2603,10 +3383,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2683,10 +3493,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2763,10 +3603,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2843,10 +3713,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2923,10 +3823,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3003,10 +3933,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3083,10 +4043,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3163,10 +4153,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3332,10 +4352,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3412,10 +4462,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3492,10 +4572,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3572,10 +4682,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3652,10 +4792,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3732,10 +4902,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3812,10 +5012,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3892,10 +5122,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3972,10 +5232,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4052,10 +5342,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4132,10 +5452,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4212,10 +5562,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4292,10 +5672,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4372,10 +5782,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4452,10 +5892,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4532,10 +6002,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4612,10 +6112,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4692,10 +6222,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4772,10 +6332,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4852,10 +6442,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4932,10 +6552,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5012,10 +6662,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5092,10 +6772,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5172,10 +6882,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5252,10 +6992,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5332,10 +7102,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914726766806971566, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834637644965625715, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
         type: 3}
       propertyPath: m_Name
       value: Light_Obstacle (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734995920186706544, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062327204470292352, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810253369749047646, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164823350123803311, guid: 91fc787ab8969db4fa64684761e115bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

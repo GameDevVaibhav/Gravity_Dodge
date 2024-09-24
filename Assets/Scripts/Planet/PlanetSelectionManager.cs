@@ -51,7 +51,7 @@ public class PlanetSelectionManager : MonoBehaviour
         }
     }
 
-    private void SelectPlanet(int index)
+    public void SelectPlanet(int index)
     {
         selectedPlanetInfo = planetSwitcher.GetPlanetInfo(index); // Get the selected planet's info
         UpdatePlanetInfoUI(index); // Update the UI with the selected planet's info
@@ -75,6 +75,8 @@ public class PlanetSelectionManager : MonoBehaviour
             equipButtonText.text = "Locked";
             SetButtonColor("red");
         }
+
+        UIPlanet.Instance.ActivateDisplayPlanet(selectedPlanetInfo.gameObject);
     }
 
     private void SetButtonColor(string colorCode)

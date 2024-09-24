@@ -19,6 +19,7 @@ public class PlanetSwitcher : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
 
     public PlanetUnlockUI planetUnlockUI;
+    public PlanetSelectionManager planetSelectionManager;
     public ChangeSkybox skybox;
 
     void OnEnable()
@@ -153,6 +154,8 @@ public class PlanetSwitcher : MonoBehaviour
         // Load the next planet in the array
         currentPlanetIndex = (currentPlanetIndex + 1) % planetPrefabs.Length;
         LoadPlanet(currentPlanetIndex);
+
+        planetSelectionManager.SelectPlanet(currentPlanetIndex);
     }
 
     void SwitchToPreviousPlanet()
@@ -166,6 +169,8 @@ public class PlanetSwitcher : MonoBehaviour
             currentPlanetIndex = planetPrefabs.Length - 1;
         }
         LoadPlanet(currentPlanetIndex);
+
+        planetSelectionManager.SelectPlanet(currentPlanetIndex);
     }
 
     public PlanetInfo GetPlanetInfo(int index)
@@ -190,6 +195,8 @@ public class PlanetSwitcher : MonoBehaviour
 
         planetUnlockUI.UpdateConditionsContainer1();
         skybox.UpdateSkybox(index);
+
+        
     }
 
     void DestroyCurrentPlanet()
