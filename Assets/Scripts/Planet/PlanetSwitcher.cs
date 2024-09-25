@@ -196,6 +196,7 @@ public class PlanetSwitcher : MonoBehaviour
         planetUnlockUI.UpdateConditionsContainer1();
         skybox.UpdateSkybox(index);
 
+        SoundManager.Instance.PlayAmbientSound(index);
         
     }
 

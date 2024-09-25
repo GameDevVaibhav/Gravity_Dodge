@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
     {
         currentState = newState;
 
+        SoundManager.Instance.HandleBackgroundMusic(currentState);
+
         switch (currentState)
         {
             case GameState.Menu:
@@ -174,6 +176,7 @@ public class GameManager : MonoBehaviour
             countdownText.gameObject.SetActive(false);
         }
 
+        
        
         UpdateGameState(GameState.Play);
         StartCoroutine(SetPlayerInvincible());

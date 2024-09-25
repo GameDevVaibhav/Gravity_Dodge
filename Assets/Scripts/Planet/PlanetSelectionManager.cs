@@ -76,7 +76,7 @@ public class PlanetSelectionManager : MonoBehaviour
             SetButtonColor("red");
         }
 
-        UIPlanet.Instance.ActivateDisplayPlanet(selectedPlanetInfo.gameObject);
+        UIPlanet.Instance.ActivateDisplayPlanet(index);
     }
 
     private void SetButtonColor(string colorCode)

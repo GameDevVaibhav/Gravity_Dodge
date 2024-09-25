@@ -43,6 +43,8 @@ public class CanvasObjectManager : MonoBehaviour
         {
             // Hide panel with reverse animation
             AnimatePanelClose(panel, sourceButton);
+
+            
         }
     }
 
@@ -73,5 +75,11 @@ public class CanvasObjectManager : MonoBehaviour
         panelRect.DOScale(Vector3.zero, animationDuration).SetEase(Ease.InBack);
         panelRect.DOMove(buttonRect.position, animationDuration).SetEase(Ease.InBack)
             .OnComplete(() => panel.SetActive(false)); // Deactivate panel after animation
+
+
+        if(panel == planetSelectPanel)
+        {
+            UIPlanet.Instance.ResetDisplayToCurrentPlanet();
+        }
     }
 }

@@ -6,6 +6,11 @@ public class UIPlanet : MonoBehaviour
 {
     public static UIPlanet Instance;
 
+    public GameObject[] planets;
+
+    public PlanetSwitcher planetSwitcher;
+    public PlanetUnlockUI planetUnlockUI;
+    private int equippedPlanetIndex = 0;
 
     private void Awake()
     {
@@ -19,12 +24,28 @@ public class UIPlanet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void ActivateDisplayPlanet(GameObject planet)
+
+    private void Start()
+    {
+        
+    }
+    public void ActivateDisplayPlanet(int index)
     {
         if (gameObject.transform.childCount > 0)
         {
             Destroy(gameObject.transform.GetChild(0).gameObject);
         }
-        Instantiate(planet, transform);
+        Instantiate(planets[index], transform);
     }
+
+    public void ResetDisplayToCurrentPlanet()
+    {
+        equippedPlanetIndex = planetSwitcher.currentPlanetIndex;
+
+        ActivateDisplayPlanet(equippedPlanetIndex);
+        
+        planetSwitcher.LoadPlanet(equippedPlanetIndex); 
+
+    }
+    
 }
