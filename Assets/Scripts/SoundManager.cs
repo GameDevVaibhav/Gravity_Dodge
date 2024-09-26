@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     public AudioSource backgroundMusic;    // Reference to the AudioSource playing the background music
+    public Toggle musicToggle;             // Reference to the toggle for background music
+    public Toggle ambientToggle;           // Reference to the toggle for ambient sound
     public Button soundToggleButton;       // Reference to the sound toggle button
     public Sprite soundOnSprite;           // Sprite for sound on
     public Sprite soundOffSprite;          // Sprite for sound off
@@ -13,7 +15,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource ambientAudioSource; // Reference to the AudioSource for ambient sounds
     public AudioClip[] ambientSounds;      // Array to store ambient audio clips
 
-    private bool isSoundOn = true;         // Track the sound state
+    private bool isSoundOn = true;         // Track the global sound state
 
     private void Awake()
     {
@@ -34,8 +36,12 @@ public class SoundManager : MonoBehaviour
         // Set initial button sprite
         UpdateButtonSprite();
 
-        // Add listener to the button
+        // Add listener to the sound toggle button
         soundToggleButton.onClick.AddListener(ToggleSound);
+
+        // Add listeners to the music and ambient toggles
+        musicToggle.onValueChanged.AddListener(delegate { ToggleMusic(); });
+        ambientToggle.onValueChanged.AddListener(delegate { ToggleAmbient(); });
 
         // Ensure there's an AudioSource for ambient sounds
         if (ambientAudioSource == null)
@@ -46,19 +52,31 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // Method to toggle sound on/off
+    // Method to toggle global sound on/off
     public void ToggleSound()
     {
         isSoundOn = !isSoundOn;
-        //HandleBackgroundMusic();
+        HandleBackgroundMusic(GameManager.Instance.currentState);
         HandleAmbientMusic();
         UpdateButtonSprite(); // Update the button sprite based on the sound state
+    }
+
+    // Method to toggle background music
+    public void ToggleMusic()
+    {
+        HandleBackgroundMusic(GameManager.Instance.currentState);
+    }
+
+    // Method to toggle ambient sound
+    public void ToggleAmbient()
+    {
+        HandleAmbientMusic();
     }
 
     // Method to play an ambient sound based on the index
     public void PlayAmbientSound(int index)
     {
-        if (isSoundOn && index >= 0 && index < ambientSounds.Length && ambientSounds[index] != null)
+        if (isSoundOn && ambientToggle.isOn && index >= 0 && index < ambientSounds.Length && ambientSounds[index] != null)
         {
             ambientAudioSource.clip = ambientSounds[index];
             ambientAudioSource.Play();
@@ -81,9 +99,8 @@ public class SoundManager : MonoBehaviour
     // Method to handle background music based on game state
     public void HandleBackgroundMusic(GameState currentState)
     {
-        if (currentState==GameState.Play && isSoundOn) // Check if we're in play mode and sound is on
+        if (isSoundOn && musicToggle.isOn && currentState == GameState.Play) // Check if we're in play mode, sound is on, and music is enabled
         {
-            
             if (!backgroundMusic.isPlaying)
             {
                 backgroundMusic.Play();
@@ -101,7 +118,7 @@ public class SoundManager : MonoBehaviour
     // Method to handle ambient music based on sound state
     public void HandleAmbientMusic()
     {
-        if (isSoundOn)
+        if (isSoundOn && ambientToggle.isOn) // Check if ambient sound is enabled and sound is on
         {
             if (!ambientAudioSource.isPlaying)
             {

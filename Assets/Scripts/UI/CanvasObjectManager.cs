@@ -10,9 +10,13 @@ public class CanvasObjectManager : MonoBehaviour
     [SerializeField]
     Button planetSelect;
     [SerializeField]
+    Button settings;
+    [SerializeField]
     Button backButton;
     [SerializeField]
     Button planetBackButton;
+    [SerializeField]
+    Button settingsBackButton;
 
     [SerializeField]
     GameObject vehicleSelectPanel;
@@ -20,6 +24,8 @@ public class CanvasObjectManager : MonoBehaviour
     [SerializeField]
     GameObject planetSelectPanel;
 
+    [SerializeField]
+    GameObject settingsPanel;
     public float animationDuration = 0.5f; // Duration for the animation
 
     private void Awake()
@@ -29,6 +35,9 @@ public class CanvasObjectManager : MonoBehaviour
 
         planetSelect.onClick.AddListener(() => TogglePanels(planetSelectPanel, planetSelect, true));
         planetBackButton.onClick.AddListener(() => TogglePanels(planetSelectPanel, planetSelect, false));
+
+        settings.onClick.AddListener(() => TogglePanels(settingsPanel, settings, true));
+        settingsBackButton.onClick.AddListener(() => TogglePanels(settingsPanel, settings, false));
     }
 
     // Method to toggle panel with animation

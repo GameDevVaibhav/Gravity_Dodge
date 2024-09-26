@@ -197,6 +197,8 @@ public class PlanetSwitcher : MonoBehaviour
         skybox.UpdateSkybox(index);
 
         SoundManager.Instance.PlayAmbientSound(index);
+
+        ResetPlanetRotation();
         
     }
 
@@ -223,5 +225,10 @@ public class PlanetSwitcher : MonoBehaviour
     public bool IsCurrentPlanetLocked()
     {
         return !planetUnlockedStatus[currentPlanetIndex];
+    }
+
+    private void ResetPlanetRotation()
+    {
+        gameObject.transform.localRotation = Quaternion.identity;
     }
 }

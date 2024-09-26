@@ -115,6 +115,7 @@ public class PlanetRotation : MonoBehaviour
     public void ResetRotationDirection()
     {
         currentRotationDirection = initialRotationDirection;
+        ResetPlanetRotation();
     }
 
     public void SpeedUp()
@@ -136,5 +137,9 @@ public class PlanetRotation : MonoBehaviour
         player.SetInvincible(false);
     }
 
+    void ResetPlanetRotation()
+    {
+        gameObject.transform.rotation = Quaternion.identity;
+    }
 
 }

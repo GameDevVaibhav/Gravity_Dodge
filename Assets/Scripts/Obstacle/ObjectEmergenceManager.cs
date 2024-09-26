@@ -270,5 +270,14 @@ public class ObjectEmergenceManager : MonoBehaviour
         ResetToOriginalInitialState();
         InitializePositionsAndStatus();
         SelectAndStartMovement();
+        DeactivateAllDecals();
+    }
+
+    private void DeactivateAllDecals()
+    {
+        foreach (GameObject objects in objectsToOscillate)
+        {
+            objects.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
