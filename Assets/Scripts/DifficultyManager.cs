@@ -10,6 +10,16 @@ public class DifficultyManager : MonoBehaviour
     private ScoreSystem scoreSystem;
     private PlanetRotation planetRotation;
 
+    void OnEnable()
+    {
+        GameManager.OnGameRestart += ResetCurrentLevel;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnGameRestart -= ResetCurrentLevel;
+    }
+
     void Start()
     {
         emergenceManager = GetComponent<ObjectEmergenceManager>();
@@ -78,5 +88,10 @@ public class DifficultyManager : MonoBehaviour
     public float GetObstacleMoveSpeed()
     {
         return emergenceManager.moveSpeed;
+    }
+
+    public void ResetCurrentLevel()
+    {
+        currentLevel = 1;
     }
 }

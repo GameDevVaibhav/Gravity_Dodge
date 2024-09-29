@@ -105,8 +105,8 @@ public class InspectPlanet : MonoBehaviour
         }
 
         // Regular drag rotation
-        float rotationX = deltaPosition.normalized.y * speedMultiplier;
-        float rotationY = -deltaPosition.normalized.x * speedMultiplier;
+        float rotationX = deltaPosition.normalized.y * speedMultiplier*Time.deltaTime;
+        float rotationY = -deltaPosition.normalized.x * speedMultiplier*Time.deltaTime;
 
         // Rotate the planet in world space
         planet.transform.Rotate(Vector3.right, rotationX, Space.World);

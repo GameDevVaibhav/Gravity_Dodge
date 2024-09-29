@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         // Enable planet switching but disable planet rotation and other interactions
         playButton.SetActive(true);
 
+        Debug.Log("Menu");
         
 
         conditionsUI.SetActive(true);
@@ -211,6 +212,8 @@ public class GameManager : MonoBehaviour
 
         // Reset planet rotation direction when restarting
         FindObjectOfType<PlanetRotation>().ResetRotationDirection();
+
+
 
         StartCoroutine(PlayDelay());
     }

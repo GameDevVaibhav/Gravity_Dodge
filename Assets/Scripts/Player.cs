@@ -4,11 +4,18 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
     public PlanetRotation planetRotation;
-    private bool isInvincible;
+    public bool isInvincible;
 
     public GameObject explosionVFX;
     public float slowMotionFactor = 0.2f; // Factor by which to slow down time
     public float delayBeforeGameOver = 3f; // Delay before game over, in seconds (real-time)
+
+    Collider collider;
+
+    private void Awake()
+    {
+        collider = GetComponent<Collider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,7 +40,8 @@ public class Player : MonoBehaviour
                 vfx.transform.SetParent(planetRotation.transform);
 
                 transform.GetChild(0).gameObject.SetActive(false);
-
+                
+                collider.enabled=false;
 
                 // Start the coroutine to handle slow motion and then game over
                 StartCoroutine(HandleCollision());
@@ -78,8 +86,12 @@ public class Player : MonoBehaviour
         this.isInvincible = isInvincible;
     }
 
+    
+
     public void ActivatePlayer()
     {
         transform.GetChild(0).gameObject.SetActive(true);
+
+        collider.enabled = true;
     }
 }

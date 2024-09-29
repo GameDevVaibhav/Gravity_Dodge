@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1339414483562159896}
   - component: {fileID: 8543949857086822179}
   - component: {fileID: 3759290180995806082}
-  - component: {fileID: 3752849959232870887}
   m_Layer: 0
   m_Name: BlueEther_Obstacle
   m_TagString: Untagged
@@ -89,14 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a0f745e9150ba4ea1d1c28189a66fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!33 &3752849959232870887
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4734995920186706544}
-  m_Mesh: {fileID: 5726398260672227768, guid: 4883ea627a540e84d9324ca822f372e7, type: 3}
 --- !u!1 &7062327204470292352
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EtherCrystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415571310487318717, guid: 8b167a483ea19a340b09b34f18bd74e4,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1415571310487318717, guid: 8b167a483ea19a340b09b34f18bd74e4,
         type: 3}

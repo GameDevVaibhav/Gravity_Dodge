@@ -25,6 +25,12 @@ public class CanvasObjectManager : MonoBehaviour
     GameObject planetSelectPanel;
 
     [SerializeField]
+    GameObject planetUICamera;
+
+    [SerializeField]
+    GameObject vehicleUICamera;
+
+    [SerializeField]
     GameObject settingsPanel;
     public float animationDuration = 0.5f; // Duration for the animation
 
@@ -72,6 +78,16 @@ public class CanvasObjectManager : MonoBehaviour
         // Animate position and scale
         panelRect.DOScale(Vector3.one, animationDuration).SetEase(Ease.OutBack);
         panelRect.DOMove(transform.position, animationDuration).SetEase(Ease.OutBack);
+
+        if(panel==planetSelectPanel)
+        {
+            planetUICamera.SetActive(true);
+        }
+
+        if(panel==vehicleSelectPanel) 
+        {
+            vehicleUICamera.SetActive(true);
+        }
     }
 
     // Method to animate the panel closing (popping back to the button)
@@ -89,6 +105,12 @@ public class CanvasObjectManager : MonoBehaviour
         if(panel == planetSelectPanel)
         {
             UIPlanet.Instance.ResetDisplayToCurrentPlanet();
+            planetUICamera.SetActive(false);
+        }
+
+        if(panel == vehicleSelectPanel)
+        {
+            vehicleUICamera.SetActive(false);
         }
     }
 }
