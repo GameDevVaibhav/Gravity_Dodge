@@ -20,6 +20,11 @@ public class DifficultyManager : MonoBehaviour
         GameManager.OnGameRestart -= ResetCurrentLevel;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.OnGameRestart -= ResetCurrentLevel;
+    }
+
     void Start()
     {
         emergenceManager = GetComponent<ObjectEmergenceManager>();

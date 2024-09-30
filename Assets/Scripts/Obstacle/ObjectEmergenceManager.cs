@@ -21,12 +21,18 @@ public class ObjectEmergenceManager : MonoBehaviour
     private GameObject[] set2Objects;         // Array to store the second set of objects for standby
     
 
+
     void OnEnable()
     {
         GameManager.OnGameRestart += ResetEmergenceManager;
     }
 
     void OnDisable()
+    {
+        GameManager.OnGameRestart -= ResetEmergenceManager;
+    }
+
+    void OnDestroy()
     {
         GameManager.OnGameRestart -= ResetEmergenceManager;
     }
