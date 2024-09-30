@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3297982057252958093}
   - component: {fileID: 4408401644109613115}
   - component: {fileID: 4890959098565341781}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: etherfix
   m_TagString: Untagged
   m_Icon: {fileID: 0}

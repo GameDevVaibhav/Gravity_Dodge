@@ -37,21 +37,12 @@ public class PlanetSwitcher : MonoBehaviour
         // Load planet unlocked status from JSON
         planetUnlockedStatus = DataLoader.LoadPlanetUnlockedStatus(planetPrefabs.Length);
 
-
-        // Instantiate all planets once and set them inactive, except the first one
-        instantiatedPlanets = new GameObject[planetPrefabs.Length];
-        for (int i = 0; i < planetPrefabs.Length; i++)
-        {
-            instantiatedPlanets[i] = Instantiate(planetPrefabs[i], planetContainer);
-            instantiatedPlanets[i].SetActive(false); // Deactivate all planets
-        }
-
         // Ensure the first planet is instantiated at the start
         LoadPlanet(currentPlanetIndex);
 
         // Get the EventSystem and GraphicRaycaster components
         eventSystem = EventSystem.current;
-       
+
     }
 
     void Update()
@@ -155,11 +146,11 @@ public class PlanetSwitcher : MonoBehaviour
 
     void SwitchToNextPlanet()
     {
-        //// Destroy the current planet in the container
-        //if (planetContainer.childCount > 0)
-        //{
-        //    Destroy(planetContainer.GetChild(0).gameObject);
-        //}
+        // Destroy the current planet in the container
+        if (planetContainer.childCount > 0)
+        {
+            Destroy(planetContainer.GetChild(0).gameObject);
+        }
 
         // Load the next planet in the array
         currentPlanetIndex = (currentPlanetIndex + 1) % planetPrefabs.Length;
@@ -170,7 +161,7 @@ public class PlanetSwitcher : MonoBehaviour
 
     void SwitchToPreviousPlanet()
     {
-        
+
 
         // Load the previous planet in the array
         currentPlanetIndex--;
@@ -192,13 +183,16 @@ public class PlanetSwitcher : MonoBehaviour
         return null;
     }
 
-   public void LoadPlanet(int index)
+    public void LoadPlanet(int index)
     {
-        // Deactivate the current planet
-        for (int i = 0; i < instantiatedPlanets.Length; i++)
+        // Destroy the current planet in the container
+        if (planetContainer.childCount > 0)
         {
-            instantiatedPlanets[i].SetActive(i == index);  // Activate only the selected planet
+            Destroy(planetContainer.GetChild(0).gameObject);
         }
+        // Instantiate the planet prefab and set it as a child of the planetContainer
+        GameObject planet = Instantiate(planetPrefabs[index], planetContainer);
+        planet.transform.localPosition = Vector3.zero; // Reset the position
 
         planetUnlockUI.UpdateConditionsContainer1();
         skybox.UpdateSkybox(index);
@@ -206,7 +200,7 @@ public class PlanetSwitcher : MonoBehaviour
         SoundManager.Instance.PlayAmbientSound(index);
 
         ResetPlanetRotation();
-        
+
     }
 
     void DestroyCurrentPlanet()

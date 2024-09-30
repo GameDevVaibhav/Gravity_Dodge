@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Earth
   obstacleName: Tree
-  planetSprite: {fileID: 21300000, guid: 856e47f93b5a9ac478f2a00792acc1a2, type: 3}
+  planetSprite: {fileID: 21300000, guid: eb7d857d04e020c4abcf500a6274d972, type: 3}
   obstacleSprite: {fileID: 21300000, guid: f70305a659b98524693c7143435109a1, type: 3}
   collectibleSprite: {fileID: 21300000, guid: 409be7a93824b734d8f53fede89ce39f, type: 3}
 --- !u!1 &6299015661214984773
