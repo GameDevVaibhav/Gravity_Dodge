@@ -6,6 +6,9 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     public AudioSource backgroundMusic;    // Reference to the AudioSource playing the background music
+    public AudioSource sfx;
+    public AudioClip pickupClip;
+    public AudioClip gameOverClip;
     public Toggle musicToggle;             // Reference to the toggle for background music
     public Toggle ambientToggle;           // Reference to the toggle for ambient sound
     public Button soundToggleButton;       // Reference to the sound toggle button

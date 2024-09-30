@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("Collision with obstacle");
 
+                SoundManager.Instance.sfx.PlayOneShot(SoundManager.Instance.gameOverClip);
+
                 // Define the rotation offset (180 degrees around the Y-axis)
                 Quaternion rotationOffset = Quaternion.Euler(0, 180, 0);
 
@@ -52,12 +54,16 @@ public class Player : MonoBehaviour
         if (collectible != null)
         {
             collectible.Collect();  // Collect the collectible
+
+            SoundManager.Instance.sfx.PlayOneShot(SoundManager.Instance.pickupClip);
         }
 
         Speedup speedup = other.gameObject.GetComponent<Speedup>();
         if (speedup != null)
         {
             speedup.Collect();  // Collect the Speedup
+
+            SoundManager.Instance.sfx.PlayOneShot(SoundManager.Instance.pickupClip);
         }
     }
 
