@@ -8,13 +8,14 @@ public class DataLoader
     private static string highScoreFilePath = Application.persistentDataPath + "/highScore.json";
     private static string planetUnlockFilePath = Application.persistentDataPath + "/planetUnlockedStatus.json";
     private static string vehicleUnlockFilePath = Application.persistentDataPath + "/vehicleUnlockedStatus.json";
+    private static string encryptionKey = "your_secret_key"; // Replace with your own key
 
-    // Load collectible counts from file
     public static Dictionary<Collectible.CollectibleType, int> LoadCollectibleCounts()
     {
         if (File.Exists(collectibleFilePath))
         {
-            string json = File.ReadAllText(collectibleFilePath);
+            string encryptedJson = File.ReadAllText(collectibleFilePath);
+            string json = Decrypt(encryptedJson);
             CollectibleData data = JsonUtility.FromJson<CollectibleData>(json);
 
             Dictionary<Collectible.CollectibleType, int> collectibleCounts = new Dictionary<Collectible.CollectibleType, int>();
@@ -34,6 +35,8 @@ public class DataLoader
                 }
             }
 
+
+
             // Save the updated collectible counts with new types added
             SaveCollectibleCounts(collectibleCounts);
 
@@ -51,9 +54,17 @@ public class DataLoader
     public static void SaveCollectibleCounts(Dictionary<Collectible.CollectibleType, int> collectibleCounts)
     {
         CollectibleData data = new CollectibleData(collectibleCounts);
-
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(collectibleFilePath, json);
+
+        // Debug before encryption
+        Debug.Log("JSON before encryption: " + json);
+
+        string encryptedJson = Encrypt(json);
+
+        // Debug after encryption
+        Debug.Log("Encrypted JSON: " + encryptedJson);
+
+        File.WriteAllText(collectibleFilePath, encryptedJson);
 
         Debug.Log("Collectible counts updated");
     }
@@ -83,7 +94,8 @@ public class DataLoader
     {
         if (File.Exists(highScoreFilePath))
         {
-            string json = File.ReadAllText(highScoreFilePath);
+            string encryptedJson = File.ReadAllText(highScoreFilePath);
+            string json = Decrypt(encryptedJson);
             HighScoreData data = JsonUtility.FromJson<HighScoreData>(json);
             Debug.Log("High score loaded: " + data.highScore);
             return data.highScore;
@@ -100,7 +112,8 @@ public class DataLoader
         HighScoreData data = new HighScoreData { highScore = 0 };
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(highScoreFilePath, json);
+        string encryptedJson = Encrypt(json);
+        File.WriteAllText(highScoreFilePath, encryptedJson);
 
         Debug.Log("Created Default file for high score");
     }
@@ -111,7 +124,8 @@ public class DataLoader
         HighScoreData data = new HighScoreData { highScore = newHighScore };
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(highScoreFilePath, json);
+        string encryptedJson = Encrypt(json);
+        File.WriteAllText(highScoreFilePath, encryptedJson);
 
         Debug.Log("High score updated: " + newHighScore);
     }
@@ -122,7 +136,8 @@ public class DataLoader
         // Check if the JSON file exists
         if (File.Exists(planetUnlockFilePath))
         {
-            string json = File.ReadAllText(planetUnlockFilePath);
+            string encryptedJson = File.ReadAllText(planetUnlockFilePath);
+            string json = Decrypt(encryptedJson);
             PlanetUnlockData data = JsonUtility.FromJson<PlanetUnlockData>(json);
 
             // If the planet count in the JSON file is less than the current planet count, update the file
@@ -166,7 +181,6 @@ public class DataLoader
         return updatedStatus;
     }
 
-
     private static bool[] InitializeDefaultPlanetUnlockStatus(int planetCount)
     {
         bool[] defaultStatus = new bool[planetCount];
@@ -192,18 +206,19 @@ public class DataLoader
         PlanetUnlockData data = new PlanetUnlockData { planetUnlockedStatus = status };
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(planetUnlockFilePath, json);
+        string encryptedJson = Encrypt(json);
+        File.WriteAllText(planetUnlockFilePath, encryptedJson);
 
         Debug.Log("Planet unlock status updated");
     }
-
 
     // Load vehicle unlocked status from file
     public static bool[] LoadVehicleUnlockedStatus(int vehicleCount)
     {
         if (File.Exists(vehicleUnlockFilePath))
         {
-            string json = File.ReadAllText(vehicleUnlockFilePath);
+            string encryptedJson = File.ReadAllText(vehicleUnlockFilePath);
+            string json = Decrypt(encryptedJson);
             VehicleUnlockData data = JsonUtility.FromJson<VehicleUnlockData>(json);
 
             // Check if the vehicle count has increased since the last save
@@ -242,7 +257,6 @@ public class DataLoader
         }
     }
 
-
     private static bool[] InitializeDefaultVehicleUnlockStatus(int vehicleCount)
     {
         bool[] defaultStatus = new bool[vehicleCount];
@@ -262,18 +276,36 @@ public class DataLoader
         Debug.Log("Created default vehicle unlock status file");
     }
 
-    // Save vehicle unlocked status to file
     public static void SaveVehicleUnlockedStatus(bool[] status)
     {
         VehicleUnlockData data = new VehicleUnlockData { vehicleUnlockedStatus = status };
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(vehicleUnlockFilePath, json);
+        string encryptedJson = Encrypt(json);
+        File.WriteAllText(vehicleUnlockFilePath, encryptedJson);
 
         Debug.Log("Vehicle unlock status updated");
     }
+
+    // Simple encryption using XOR
+    private static string Encrypt(string input)
+    {
+        char[] key = encryptionKey.ToCharArray();
+        char[] inputArray = input.ToCharArray();
+        char[] outputArray = new char[input.Length];
+
+        for (int i = 0; i < input.Length; i++)
+        {
+            outputArray[i] = (char)(inputArray[i] ^ key[i % key.Length]);
+        }
+
+        return new string(outputArray);
+    }
+
+    // Simple decryption using XOR
+    private static string Decrypt(string input)
+    {
+        return Encrypt(input); // XOR encryption is symmetrical
+    }
 }
-
-
-
 

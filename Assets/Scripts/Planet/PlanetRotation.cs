@@ -129,8 +129,12 @@ public class PlanetRotation : MonoBehaviour
         player.SetInvincible(true); // Enable invincibility
         rotationSpeed *= speedupMultiplier;
 
+        ScoreSystem.Instance.ScoreSpeedup(true);
+
         // Wait for 3 seconds
         yield return new WaitForSeconds(3f);
+
+        ScoreSystem.Instance.ScoreSpeedup(false);
 
         // Revert to the original rotation speed and disable invincibility
         rotationSpeed = originalSpeed;

@@ -36,9 +36,11 @@ public class CollectibleManager : MonoBehaviour
     public void SaveCollectibleCounts()
     {
         CollectibleData data = new CollectibleData(collectibleCounts);
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(Application.persistentDataPath + "/collectibleCounts.json", json);
-        Debug.Log("Collectible counts saved to " + Application.persistentDataPath + "/collectibleCounts.json");
+        //string json = JsonUtility.ToJson(data, true);
+        //File.WriteAllText(Application.persistentDataPath + "/collectibleCounts.json", json);
+        //Debug.Log("Collectible counts saved to " + Application.persistentDataPath + "/collectibleCounts.json");
+
+        DataLoader.SaveCollectibleCounts(collectibleCounts);
     }
 
 }

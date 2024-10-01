@@ -27,6 +27,8 @@ public class LogoAnimation : MonoBehaviour
     private float rotationDuration;
 
     public GameObject logo;
+    public GameObject gameView;
+    public GameObject logoCanavas;
     public float fadeInDuration = 2f;
 
     private void Start()
@@ -96,12 +98,21 @@ public class LogoAnimation : MonoBehaviour
             canvasGroup.alpha = 0f;
 
             // Fade in by increasing the alpha from 0 to 1 over the specified duration
-            canvasGroup.DOFade(1f, fadeInDuration).SetEase(Ease.InOutQuad);
+            canvasGroup.DOFade(1f, fadeInDuration).SetEase(Ease.InOutQuad).OnComplete(ActivateGameView) ;
         }
         else
         {
             Debug.LogWarning("No object assigned to activate after the animation.");
         }
+    }
+
+    private void ActivateGameView()
+    {
+
+        gameView.SetActive(true);
+        Destroy(logoCanavas);
+        
+        
     }
 }
 
