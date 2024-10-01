@@ -6,9 +6,10 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     public AudioSource backgroundMusic;    // Reference to the AudioSource playing the background music
-    public AudioSource sfx;
+    public AudioSource sfx;                // Reference to the AudioSource playing sound effects
     public AudioClip pickupClip;
     public AudioClip gameOverClip;
+    public AudioClip countdownClip;
     public Toggle musicToggle;             // Reference to the toggle for background music
     public Toggle ambientToggle;           // Reference to the toggle for ambient sound
     public Button soundToggleButton;       // Reference to the sound toggle button
@@ -53,14 +54,24 @@ public class SoundManager : MonoBehaviour
             ambientAudioSource.loop = true;   // Set ambient sound to loop by default
             ambientAudioSource.playOnAwake = false; // Don't play ambient sound automatically
         }
+
+        // Set the initial mute state for both background music and sfx based on isSoundOn
+        backgroundMusic.mute = !isSoundOn;
+        sfx.mute = !isSoundOn;
     }
 
     // Method to toggle global sound on/off
     public void ToggleSound()
     {
         isSoundOn = !isSoundOn;
+
+        // Mute or unmute both background music and sound effects based on the global sound state
+        backgroundMusic.mute = !isSoundOn;
+        sfx.mute = !isSoundOn;
+
         HandleBackgroundMusic(GameManager.Instance.currentState);
         HandleAmbientMusic();
+
         UpdateButtonSprite(); // Update the button sprite based on the sound state
     }
 
@@ -144,6 +155,30 @@ public class SoundManager : MonoBehaviour
         else
         {
             soundToggleButton.GetComponent<Image>().sprite = soundOffSprite;
+        }
+    }
+
+    public void PlayCollectSfx()
+    {
+        if (isSoundOn)
+        {
+            sfx.PlayOneShot(pickupClip);
+        }
+    }
+
+    public void PlayGameOverSfx()
+    {
+        if (isSoundOn)
+        {
+            sfx.PlayOneShot(gameOverClip);
+        }
+    }
+
+    public void PlayCountdownSfx()
+    {
+        if (isSoundOn)
+        {
+            sfx.PlayOneShot(countdownClip);
         }
     }
 }

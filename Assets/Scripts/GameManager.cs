@@ -40,6 +40,12 @@ public class GameManager : MonoBehaviour
 
     private int currentHighScore;
 
+    public PlanetUnlockCondition planetUnlockCondition;
+    public VehicleUnlockCondition vehicleUnlockCondition;
+    public VehicleSelectionManager vehicleSelectionManager;
+
+   
+
     private void Awake()
     {
         if (Instance == null)
@@ -60,6 +66,8 @@ public class GameManager : MonoBehaviour
         PlanetCount = planetSwitcher.planetPrefabs.Length;
 
         homeButton.onClick.AddListener(Home);
+
+
     }
 
     private void Start()
@@ -105,9 +113,9 @@ public class GameManager : MonoBehaviour
 
         scoreSystem.ResetScore();
 
-        FindObjectOfType<PlanetUnlockCondition>().CheckAllUnlockStatuses();
-        FindAnyObjectByType<VehicleUnlockCondition>().CheckAllUnlockStatuses();
-        FindAnyObjectByType<VehicleSelectionManager>().LoadVehicleUnlockStatus();
+        planetUnlockCondition.CheckAllUnlockStatuses();
+        vehicleUnlockCondition.CheckAllUnlockStatuses();
+        vehicleSelectionManager.LoadVehicleUnlockStatus();
 
         planetSwitcher.PlanetUnlockStatusUpdate();
         planetUnlockUI.UpdateConditionsContainer1();
@@ -157,6 +165,8 @@ public class GameManager : MonoBehaviour
         optionsButtonGroup.SetActive(false);
 
         StartCoroutine(PlayDelay());
+
+        SoundManager.Instance.PlayCountdownSfx();
         
     }
 
@@ -186,7 +196,9 @@ public class GameManager : MonoBehaviour
     IEnumerator SetPlayerInvincible()
     {
         player.SetInvincible(true);
-        yield return new WaitForSeconds (3f);
+
+        yield return new WaitForSeconds(3f);
+
         player.SetInvincible(false);
     }
    

@@ -63,6 +63,7 @@ public class VehicleUnlockCondition : MonoBehaviour
             vehicleUnlockStatus[vehicleIndex] = true;
             DataLoader.SaveVehicleUnlockedStatus(vehicleUnlockStatus);
             Debug.Log("Vehicle " + vehicleIndex + " has been unlocked!");
+            NotificationManager.Instance.ShowNotification("New Vehicle Unlocked");
         }
         isUnlocked[vehicleIndex] = true;
     }

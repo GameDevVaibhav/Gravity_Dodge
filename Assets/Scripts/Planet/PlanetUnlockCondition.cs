@@ -71,6 +71,7 @@ public class PlanetUnlockCondition : MonoBehaviour
             planetUnlockStatus[planetIndex] = true;
             DataLoader.SavePlanetUnlockedStatus(planetUnlockStatus);
             Debug.Log("Planet " + planetIndex + " has been unlocked!");
+            NotificationManager.Instance.ShowNotification("New Planet Unlocked");
         }
         isUnlocked[planetIndex] = true;
     }

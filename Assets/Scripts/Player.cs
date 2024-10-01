@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     Collider collider;
 
+    public GameObject shield;
+
     private void Awake()
     {
         collider = GetComponent<Collider>();
@@ -32,7 +34,7 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("Collision with obstacle");
 
-                SoundManager.Instance.sfx.PlayOneShot(SoundManager.Instance.gameOverClip);
+                SoundManager.Instance.PlayGameOverSfx();
 
                 // Define the rotation offset (180 degrees around the Y-axis)
                 Quaternion rotationOffset = Quaternion.Euler(0, 180, 0);
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour
         {
             collectible.Collect();  // Collect the collectible
 
-            SoundManager.Instance.sfx.PlayOneShot(SoundManager.Instance.pickupClip);
+            SoundManager.Instance.PlayCollectSfx();
         }
 
         Speedup speedup = other.gameObject.GetComponent<Speedup>();
@@ -63,7 +65,7 @@ public class Player : MonoBehaviour
         {
             speedup.Collect();  // Collect the Speedup
 
-            SoundManager.Instance.sfx.PlayOneShot(SoundManager.Instance.pickupClip);
+            SoundManager.Instance.PlayCollectSfx();
         }
     }
 
@@ -90,6 +92,8 @@ public class Player : MonoBehaviour
     public void SetInvincible(bool isInvincible)
     {
         this.isInvincible = isInvincible;
+
+        shield.SetActive(isInvincible);
     }
 
     

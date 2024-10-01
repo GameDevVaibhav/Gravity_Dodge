@@ -1703,6 +1703,7 @@ MonoBehaviour:
     type: 3}
   slowMotionFactor: 0.1
   delayBeforeGameOver: 3
+  shield: {fileID: 1809207871}
 --- !u!114 &363429244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2762,6 +2763,9 @@ MonoBehaviour:
   planetUnlockUI: {fileID: 1223446455}
   vehicleUnlockUI: {fileID: 1223446458}
   PlanetCount: 0
+  planetUnlockCondition: {fileID: 743443682}
+  vehicleUnlockCondition: {fileID: 743443684}
+  vehicleSelectionManager: {fileID: 1223446456}
 --- !u!114 &743443681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2792,17 +2796,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetUnlockConditions:
-  - unlockConditions:
-    - collectibleType: 1
-      requiredAmount: 200
-    - collectibleType: 3
-      requiredAmount: 180
-    - collectibleType: 2
-      requiredAmount: 100
   - unlockConditions: []
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 21
+      requiredAmount: 35
   - unlockConditions:
     - collectibleType: 0
       requiredAmount: 75
@@ -2815,6 +2812,13 @@ MonoBehaviour:
       requiredAmount: 120
     - collectibleType: 3
       requiredAmount: 80
+  - unlockConditions:
+    - collectibleType: 1
+      requiredAmount: 200
+    - collectibleType: 3
+      requiredAmount: 180
+    - collectibleType: 2
+      requiredAmount: 100
   - unlockConditions:
     - collectibleType: 3
       requiredAmount: 300
@@ -2868,69 +2872,87 @@ MonoBehaviour:
       requiredAmount: 0
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 10
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 50
+    - collectibleType: 1
+      requiredAmount: 40
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 100
+    - collectibleType: 1
+      requiredAmount: 85
   - unlockConditions:
     - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 150
+    - collectibleType: 1
+      requiredAmount: 120
+    - collectibleType: 2
+      requiredAmount: 100
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+    - collectibleType: 1
+      requiredAmount: 150
+    - collectibleType: 2
+      requiredAmount: 120
+    - collectibleType: 3
+      requiredAmount: 100
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+    - collectibleType: 1
+      requiredAmount: 300
+    - collectibleType: 2
+      requiredAmount: 200
+    - collectibleType: 3
+      requiredAmount: 150
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+    - collectibleType: 2
+      requiredAmount: 300
+    - collectibleType: 3
+      requiredAmount: 250
+    - collectibleType: 4
+      requiredAmount: 150
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+    - collectibleType: 2
+      requiredAmount: 400
+    - collectibleType: 3
+      requiredAmount: 350
+    - collectibleType: 4
+      requiredAmount: 250
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
-    - collectibleType: 6
-      requiredAmount: 13
+    - collectibleType: 3
+      requiredAmount: 500
+    - collectibleType: 4
+      requiredAmount: 300
+    - collectibleType: 5
+      requiredAmount: 200
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
+    - collectibleType: 4
+      requiredAmount: 400
+    - collectibleType: 5
+      requiredAmount: 300
     - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 250
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
+    - collectibleType: 5
+      requiredAmount: 300
     - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 250
+    - collectibleType: 7
+      requiredAmount: 200
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
+    - collectibleType: 5
+      requiredAmount: 500
     - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 350
+    - collectibleType: 7
+      requiredAmount: 300
   - unlockConditions:
-    - collectibleType: 0
-      requiredAmount: 5
+    - collectibleType: 5
+      requiredAmount: 550
     - collectibleType: 6
-      requiredAmount: 13
+      requiredAmount: 400
+    - collectibleType: 7
+      requiredAmount: 350
 --- !u!114 &743443685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2947,6 +2969,7 @@ MonoBehaviour:
   sfx: {fileID: 530577954}
   pickupClip: {fileID: 8300000, guid: 949dbefbbe45b3145ba84cce5e4c71fa, type: 3}
   gameOverClip: {fileID: 8300000, guid: 5d93986c6991b684c8e244169307f9f9, type: 3}
+  countdownClip: {fileID: 8300000, guid: aff20710f5bcda04da63de13ba423738, type: 3}
   musicToggle: {fileID: 1297918038}
   ambientToggle: {fileID: 881874230}
   soundToggleButton: {fileID: 1369973578}
@@ -4551,6 +4574,7 @@ RectTransform:
   - {fileID: 1816959140}
   - {fileID: 1708887157}
   - {fileID: 235260665}
+  - {fileID: 1809207872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5163,7 +5187,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 1962934271
-  m_fontColor: {r: 1, g: 0.48596564, b: 0.12641507, a: 0.45490196}
+  m_fontColor: {r: 1, g: 0.28235295, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7163,8 +7187,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3204484607
-  m_fontColor: {r: 1, g: 0.5539995, b: 0, a: 0.7490196}
+    rgba: 4278208511
+  m_fontColor: {r: 1, g: 0.2790479, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7364,6 +7388,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768654441}
+  m_CullTransparentMesh: 1
+--- !u!1 &1809207871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809207872}
+  - component: {fileID: 1809207874}
+  - component: {fileID: 1809207873}
+  m_Layer: 5
+  m_Name: Vehicle Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1809207872
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809207871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1223446454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -4.2}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1809207873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809207871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a3801e8f3a492cc4ab65550d1c44c667, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1809207874
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809207871}
   m_CullTransparentMesh: 1
 --- !u!1 &1816959139
 GameObject:

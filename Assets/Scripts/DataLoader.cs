@@ -18,12 +18,26 @@ public class DataLoader
             CollectibleData data = JsonUtility.FromJson<CollectibleData>(json);
 
             Dictionary<Collectible.CollectibleType, int> collectibleCounts = new Dictionary<Collectible.CollectibleType, int>();
+
+            // Load existing collectible counts from file
             foreach (var collectible in data.counts)
             {
                 collectibleCounts[collectible.type] = collectible.count;
             }
 
-            Debug.Log("Collectible counts loaded from " + collectibleFilePath);
+            // Check if new collectible types have been added
+            foreach (Collectible.CollectibleType type in System.Enum.GetValues(typeof(Collectible.CollectibleType)))
+            {
+                if (!collectibleCounts.ContainsKey(type))
+                {
+                    collectibleCounts[type] = 0; // Initialize new collectible types with a count of 0
+                }
+            }
+
+            // Save the updated collectible counts with new types added
+            SaveCollectibleCounts(collectibleCounts);
+
+            Debug.Log("Collectible counts loaded and updated from " + collectibleFilePath);
             return collectibleCounts;
         }
         else
@@ -33,24 +47,35 @@ public class DataLoader
         }
     }
 
+    // Save collectible counts to file
+    public static void SaveCollectibleCounts(Dictionary<Collectible.CollectibleType, int> collectibleCounts)
+    {
+        CollectibleData data = new CollectibleData(collectibleCounts);
+
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(collectibleFilePath, json);
+
+        Debug.Log("Collectible counts updated");
+    }
+
     private static Dictionary<Collectible.CollectibleType, int> InitializeDefaultCollectibleCounts()
     {
         Dictionary<Collectible.CollectibleType, int> defaultCounts = new Dictionary<Collectible.CollectibleType, int>();
+
         foreach (Collectible.CollectibleType type in System.Enum.GetValues(typeof(Collectible.CollectibleType)))
         {
-            defaultCounts[type] = 0;
+            defaultCounts[type] = 0; // Initialize all collectible types with a count of 0
         }
+
         return defaultCounts;
     }
 
     private static void CreateCollectibleCountsFile()
     {
-        CollectibleData data = new CollectibleData(InitializeDefaultCollectibleCounts());
+        Dictionary<Collectible.CollectibleType, int> defaultCounts = InitializeDefaultCollectibleCounts();
+        SaveCollectibleCounts(defaultCounts);
 
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(collectibleFilePath, json);
-
-        Debug.Log("Created Default file for collectibles");
+        Debug.Log("Created default collectible counts file");
     }
 
     // Load high score from file

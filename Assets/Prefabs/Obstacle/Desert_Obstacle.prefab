@@ -55,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1298090184721751659}
   - component: {fileID: 1339414483562159896}
-  - component: {fileID: 8543949857086822179}
   - component: {fileID: 3759290180995806082}
   m_Layer: 0
   m_Name: Desert_Obstacle
@@ -105,22 +104,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &8543949857086822179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4734995920186706544}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74491a46b00d674f91b2bccc83855b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emergenceSpeed: 2
-  emergenceDistance: 1.5
-  oscillationFrequency: 1
-  planetCenter: {fileID: 0}
 --- !u!114 &3759290180995806082
 MonoBehaviour:
   m_ObjectHideFlags: 0
