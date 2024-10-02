@@ -103,7 +103,11 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(true);
 
         Debug.Log("Menu");
-        
+
+        if (GoogleIntegration.instance.connectedToGooglePlay)
+        {
+            NotificationManager.Instance.ShowNotification("Connected");
+        }
 
         conditionsUI.SetActive(true);
 
@@ -148,8 +152,12 @@ public class GameManager : MonoBehaviour
         {
             DataLoader.SaveHighScore(finalScore); // Update high score if necessary
             currentHighScore = finalScore;
+
+            GoogleIntegration.instance.DoLeaderboardPost(currentHighScore);
         }
     }
+
+  
 
     public void OnPlayButtonClicked()
     {

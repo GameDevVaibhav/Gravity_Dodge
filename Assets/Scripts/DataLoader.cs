@@ -8,7 +8,7 @@ public class DataLoader
     private static string highScoreFilePath = Application.persistentDataPath + "/highScore.json";
     private static string planetUnlockFilePath = Application.persistentDataPath + "/planetUnlockedStatus.json";
     private static string vehicleUnlockFilePath = Application.persistentDataPath + "/vehicleUnlockedStatus.json";
-    private static string encryptionKey = "your_secret_key"; // Replace with your own key
+    private static string encryptionKey = "51434879"; 
 
     public static Dictionary<Collectible.CollectibleType, int> LoadCollectibleCounts()
     {
