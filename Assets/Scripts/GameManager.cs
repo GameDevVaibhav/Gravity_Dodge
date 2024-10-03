@@ -246,5 +246,8 @@ public class GameManager : MonoBehaviour
         player.ActivatePlayer();
     } 
 
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

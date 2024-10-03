@@ -12,8 +12,7 @@ using UnityEngine;
 public class GoogleIntegration : MonoBehaviour
 {
     public static GoogleIntegration instance;
-    public string GooglePlayToken;
-    public string GooglePlayError;
+    
 
     
 
@@ -39,7 +38,14 @@ public class GoogleIntegration : MonoBehaviour
 
     public void SignIn()
     {
-        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+        if(!connectedToGooglePlay)
+        {
+            PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+        }
+        else
+        {
+            NotificationManager.Instance.ShowNotification("Already Connected");
+        }
     }
 
     internal void ProcessAuthentication(SignInStatus status)
@@ -47,6 +53,7 @@ public class GoogleIntegration : MonoBehaviour
         if(status == SignInStatus.Success)
         {
             Debug.Log("Login success");
+            connectedToGooglePlay = true;
         }
         else
         {
